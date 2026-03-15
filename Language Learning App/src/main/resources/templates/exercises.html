@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/exercises.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+                <a th:if="${isAdmin}" href="/admin-page">My Page</a>
+                <a th:if="${isUser}" href="/user-page">My Page</a>
+                <a href="/french">Learn French</a>
+                <a href="/forum">Forum</a>
+                <a href="/logout" >Logout</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="main_section position-relative">
+    <div class="main_bg_box">
+        <img src="/images/exercises2.jpg" alt="">
+    </div>
+    <div class="main_bg"></div>
+    <div class="container">
+        <div class="col-md-24 ml-auto">
+            <div class="detail-box">
+                <h1>Training exercises</h1>
+                <p> Welcome to the Training Exercises page, dedicated to enhancing your French language skills.
+                    <br>Our interactive exercises provide targeted practice opportunities to improve your French
+                    <br>proficiency. From vocabulary drills to grammar exercises, immerse yourself in a dynamic
+                    <br>learning experience tailored to help you excel in French. Start practicing today and take
+                    <br>your language skills to the next level!
+                </p>
+                <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+                <div id="chatWindowcontainer" class="window-container" style="display: none;">
+                    <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- exercises section -->
+<section class="exercises_section layout_padding">
+    <div class="exercises_bg_box">
+        <img src="/images/login.jpg" alt="">
+    </div>
+    <div class="exercises_bg"></div>
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2 id="title">Test your knowledge:</h2>
+        </div>
+        <div class="">
+            <div class="row">
+                <div class="col-md-48 mx-auto">
+                    <div class="exercises_form-container">
+                        <div id="question-title">question title</div><hr>
+                        <div id="option-list"></div>
+                        <div class="score" id="score-area">score area</div>
+
+
+                        <a class="btn">
+
+                            <button id="start">Start</button>
+                            <button id="submit1">Submit</button>
+                            <button id="submit2">Submit</button>
+                            <button id="submit3">Submit</button>
+                            <button id="submit4">Submit</button>
+                            <form id="quizForm1" action="/exercises" method="post">
+                                <input type="hidden" id="quiz_id1" name="quiz_id" value="0" >
+                                <input type="hidden" id="grade1" name="grade" value="0" >
+                                <button id="submitQuiz1">Submit Quiz</button>
+                            </form>
+                            <form id="quizForm2" action="/exercises" method="post">
+                                <input type="hidden" id="quiz_id2" name="quiz_id" value="0" >
+                                <input type="hidden" id="grade2" name="grade" value="0" >
+                                <button id="submitQuiz2">Submit Quiz</button>
+                            </form>
+                            <form id="quizForm3" action="/exercises" method="post">
+                                <input type="hidden" id="quiz_id3" name="quiz_id" value="0" >
+                                <input type="hidden" id="grade3" name="grade" value="0" >
+                                <button id="submitQuiz3">Submit Quiz</button>
+                            </form>
+                            <form id="quizForm4" action="/exercises" method="post">
+                                <input type="hidden" id="quiz_id4" name="quiz_id" value="0" >
+                                <input type="hidden" id="grade4" name="grade" value="0" >
+                                <button id="submitQuiz4">Submit Quiz</button>
+                            </form>
+                            <div class="quiz-options">
+                                <div>
+                                    <img id="quiz1img" src="/images/test1.png" alt="QuizImage">
+                                    <button id="quiz1">Quiz 1</button>
+                                </div>
+                                <div>
+                                    <img id="quiz2img" src="/images/test2.png" alt="QuizImage">
+                                    <button id="quiz2">Quiz 2</button>
+                                </div>
+                                <div>
+                                    <img id="quiz3img" src="/images/test3.png" alt="QuizImage">
+                                    <button id="quiz3">Quiz 3</button>
+                                </div>
+                                <div>
+                                    <img id="quiz4img" src="/images/test4.png" alt="QuizImage">
+                                    <button id="quiz4">Quiz 4</button>
+                                </div>
+                            </div>
+
+                            <button id="play-again">Try Again</button>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top">Top</button>
+        </div>
+    </div>
+
+    <script >
+        function toggleChatWindow() {
+            var chatWindow = document.getElementById('chatWindowcontainer');
+            chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+        }
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("back-to-top-btn").style.display = "block";
+            } else {
+                document.getElementById("back-to-top-btn").style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0; /* For Safari */
+            document.documentElement.scrollTop = 0; /* For Chrome, Firefox, IE and Opera */
+        }
+
+
+        var data1 = [
+            {
+                "qs": "1. Quel connecteur ne peut pas servir à résumer une opinion ?",
+                "options": [" enfin", " bref", " en fin de compte", " en somme"],
+                "answerId": 0
+            },
+            {
+                "qs": "2. Je ne _______ à l’environnement, jusqu’au jour où _______ le film Home.",
+                "options": [" me suis pas intéressé / j’ai vu", " m’intéressais pas / j’avais vu", " m’intéressais pas / j’ai vu", " m’étais pas intéressé / je voyais"],
+                "answerId": 2
+            },
+            {
+                "qs": "3. Si on continue au rythme actuel, la pollution plastique doublera en 2030.",
+                "options": [" Cette phrase est correcte.", " Cette phrase est incorrecte.", " Tu ne peux pas le dire." , " C'est en partie correct"],
+                "answerId": 1
+            },
+            {
+                "qs": "4. Franchement, ______ d’audiolivre avant et j’ai été agréablement surpris.",
+                "options": [" je n’avais jamais écouté", " je n’ai jamais écouté", " je n’écouterai jamais ", " je n’écoute jamais"],
+                "answerId": 0
+            },
+            {
+                "qs": "5. Je n’ai rien contre la cuisine végétarienne à l’école, pourvu qu’elle ne ________ pas obligatoire.",
+                "options": [" devient ", " devienne ", " devenait", " deviendra"],
+                "answerId": 1
+            },
+            {
+                "qs": "6. Les habitants seraient très choqués _______ l’interdiction des voitures en centre-ville.",
+                "options": [" pour apprendre", " d’avoir appris", " en apprenant", " qu’ils apprennent"],
+                "answerId": 2
+            },
+            {
+                "qs": "7. Le département a versé une aide financière à tous les lycéens ______ leur diplôme du baccalauréat avec mention « très bien ».",
+                "options": [" obtenant", " qui obtiendront", " ayant obtenu", " en train d’obtenir"],
+                "answerId": 2
+            },
+            {
+                "qs": "8. C’est _______ que l’on devient forgeron.",
+                "options": [" d’avoir forgé", " qu’à forger ", " Les trois réponses ci-dessus sont correctes.", " en forgeant"],
+                "answerId": 3
+            },
+            {
+                "qs": "9. L’employé a été licencié pour ______ le télétravail.",
+                "options": [" refus", " refuser", " avoir refusé", " qu’il refuse"],
+                "answerId": 2
+            },
+            {
+                "qs": "10. __________ animal sauvage me fait peur.",
+                "options": [" de ce fait", " sous prétexte que", " à force de", " par manque de"],
+                "answerId": 0
+            }
+        ];
+        var data2 = [
+            {
+                "qs": "1. _______ pas obtenu de réponse à ma première lettre, je me permets de réitérer ma demande.",
+                "options": [" N’ayant", " N’avais", " N’avoir", " Les trois réponses ci-dessus sont incorrectes."],
+                "answerId": 0
+            },
+            {
+                "qs": "2. Lorsque _______ mes études, je prendrai une année sabbatique.",
+                "options": [" j’ai terminé", " je terminais", " j’aurai terminé", " j’avais terminé"],
+                "answerId": 2
+            },
+            {
+                "qs": "3. Après _______ les inconvénients de la robotisation, j’exposerai ses avantages.",
+                "options": [" identifier", " que j’identifierai.", " que j’ai identifié." , " avoir identifié"],
+                "answerId": 3
+            },
+            {
+                "qs": "4. C’est _______ que l’on devient forgeron.",
+                "options": [" d’avoir forgé", " qu’à forger ", " Les trois réponses ci-dessus sont correctes.", " en forgeant"],
+                "answerId": 3
+            },
+            {
+                "qs": "5. L’interdiction de la cigarette électronique serait désastreuse pour ces entreprises. Dans cette phrase, le conditionnel présent sert à exprimer :",
+                "options": [" Une hypothèse ", " Une condition ", " Un conseil", " Un reproche"],
+                "answerId": 0
+            },
+            {
+                "qs": "6. On ferait mieux d’intégrer le téléphone dans les activités pédagogiques _______ l’interdire en classe.",
+                "options": [" au lieu de", " en dépit de", " à cause de", " en vue de"],
+                "answerId": 0
+            },
+            {
+                "qs": "7. Si j’avais consacré moins de temps aux jeux vidéo, ______ aux examens",
+                "options": [" je n’avais pas échoué", " je n’échouerai pas", " je n’échouais pas", " je n’aurais pas échoué"],
+                "answerId": 3
+            },
+            {
+                "qs": "8. La presse a annoncé que le gouvernement ________ bientôt des mesures afin de réduire la précarité des étudiants.",
+                "options": [" aurait proposé", " proposera", " proposerait", " avait proposé"],
+                "answerId": 2
+            },
+            {
+                "qs": "9. _______ à l’énergie solaire, elle n’est pas très performante avec ce type de climat.",
+                "options": [" Quant", " Suite", " En effet", " Concernant"],
+                "answerId": 0
+            },
+            {
+                "qs": "10. Ce n’est pas (supprimer) les notes que l’on réglerait le problème de l’échec scolaire. À quel mode et à quel temps faut-il conjuguer le verbe entre parenthèse ?",
+                "options": [" Conditionnel présent", " Gérondif présent", " Infinitif passé", " Indicatif plus que parfait"],
+                "answerId": 1
+            }
+
+        ];
+        var data3 = [
+            {
+                "qs": "1. Vous pourriez autoriser les voitures en centre-ville un jour sur deux. Parmi les phrases ci-dessous, laquelle exprime le même sens ?",
+                "options": [" Une interdiction des voitures en centre-ville un jour sur deux serait une mesure possible.", " Il faudrait autoriser les voitures en centre-ville un jour sur deux.", " Vous devriez autoriser les voitures en centre-ville un jour sur deux.", " Les 3 phrases ci-dessus expriment le même sens."],
+                "answerId": 3
+            },
+            {
+                "qs": "2. J’ai entendu dire que le maire _______ supprimer le festival de chants folkloriques.",
+                "options": [" souhaitait", " souhaité", " souhaitant", " souhaitera"],
+                "answerId": 0
+            },
+            {
+                "qs": "3. C’est _______ que l’on devient forgeron.",
+                "options": [" d’avoir forgé", " qu’à forger ", " Les trois réponses ci-dessus sont correctes.", " en forgeant"],
+                "answerId": 3
+            },
+            {
+                "qs": "4. C’est un sujet sur _____ il n’a pas souhaité s’étendre.",
+                "options": [" dont", " lequel", " auquel", " ce qu’"],
+                "answerId": 1
+            },
+            {
+                "qs": "5. Il faut s’attendre ________ une augmentation des pathologies liées à la chaleur dans les prochaines années.",
+                "options": [" à ", " d’ ", " l'", " pas de préposition"],
+                "answerId": 0
+            },
+            {
+                "qs": "6. TED, ce sont des conférences au cours ________ les intervenants doivent parler pendant 20 minutes sans notes.",
+                "options": [" lesquelles", " auxquelles", " Toutes les propositions ci-dessus sont incorrectes.", " desquelles"],
+                "answerId": 3
+            },
+            {
+                "qs": "7. Ce n’est pas (supprimer) les notes que l’on réglerait le problème de l’échec scolaire. À quel mode et à quel temps faut-il conjuguer le verbe entre parenthèse ?",
+                "options": [" Conditionnel présent", " Gérondif présent", " Infinitif passé", " Indicatif plus que parfait"],
+                "answerId": 1
+            },
+            {
+                "qs": "8. Cet expert affirme que le jeu vidéo ______. un meilleur développement de l’enfant.",
+                "options": [" permette", " permet ", " permettre", " permettrait"],
+                "answerId": 1
+            },
+            {
+                "qs": "9. Quel verbe ne se construit pas avec la préposition « de » suivie d’un verbe à l’infinitif ?",
+                "options": [" permettre", " interdire", " autoriser", " conseiller"],
+                "answerId": 2
+            },
+            {
+                "qs": "10. Il faut inciter _______ la population à refuser les pailles en plastique.",
+                "options": [" à", " que", " de", " pas de préposition"],
+                "answerId": 3
+            }
+
+        ];
+        var data4 = [
+            {
+                "qs": "1. De nombreux candidats trichent sur leur CV en vue _______ recrutés plus facilement.",
+                "options": [" qu’ils sont", " d’être", " qu’ils soient", " d’avoir été"],
+                "answerId": 1
+            },
+            {
+                "qs": "2. Je ne suis pas certain qu’il ________ rétablir l’uniforme à l’école.",
+                "options": [" faut", " fallait", " faudra", " faille"],
+                "answerId": 3
+            },
+            {
+                "qs": "3. Quel verbe se construit avec 2 prépositions ?",
+                "options": [" Persuader", " Promettre", " Encourager" , " Empêcher"],
+                "answerId": 1
+            },
+            {
+                "qs": "4. La gratuité des transports en commun serait une mesure efficace. ________, elle représenterait un coût important pour les collectivités.",
+                "options": [" Par conséquent", " Cependant", " De ce fait", " En effet"],
+                "answerId": 1
+            },
+            {
+                "qs": "5. Je m’étonne que le ministère de l’Éducation ne ______ pas de mesures contre le harcèlement scolaire.",
+                "options": [" de ", " à ", " l'", " Ces 3 prépositions sont correctes."],
+                "answerId": 0
+            },
+            {
+                "qs": "6. Il s’avère extrêmement difficile ______ lutter contre le téléchargement illégal.",
+                "options": [" pour apprendre", " d’avoir appris", " en apprenant", " qu’ils apprennent"],
+                "answerId": 2
+            },
+            {
+                "qs": "7. Beaucoup de gens portent un casque, bien qu’il __________ pas encore obligatoire.",
+                "options": [" n’est", " n’était", " ne soit", " ne fut"],
+                "answerId": 2
+            },
+            {
+                "qs": "8. Ces chiffres sont susceptibles _________ varier au cours de cette année.",
+                "options": [" pas de préposition", " à ", " pour", " de"],
+                "answerId": 3
+            },
+            {
+                "qs": "9. Quelle paire de connecteurs ne s’utilise pas pour poser une alternative ?",
+                "options": [" soit… soit…", " non seulement… mais encore….", " d’un côté… de l’autre…", " ou bien… ou bien…"],
+                "answerId": 1
+            },
+            {
+                "qs": "10. Deux employés d’un supermarché ont été licenciés après qu’ils ___________ de travailler le dimanche.",
+                "options": [" ont refusé", " aient refusé", " auront refusé", " Les 3 conjugaisons ci-dessus sont incorrectes."],
+                "answerId": 0
+            }
+
+        ];
+
+        let questionNo = 0;
+        let score = 0;
+        let question_title = document.getElementById('question-title');
+        let option_list = document.getElementById('option-list');
+        let score_area = document.getElementById('score-area');
+        let btn_submit1 = document.getElementById('submit1');
+        let btn_submit2 = document.getElementById('submit2');
+        let btn_submit3 = document.getElementById('submit3');
+        let btn_submit4 = document.getElementById('submit4');
+        let submitQuiz1 = document.getElementById('submitQuiz1');
+        let submitQuiz2 = document.getElementById('submitQuiz2');
+        let submitQuiz3 = document.getElementById('submitQuiz3');
+        let submitQuiz4 = document.getElementById('submitQuiz4');
+        let start = document.getElementById('start');
+        let play_again = document.getElementById('play-again');
+        let quiz1 = document.getElementById('quiz1');
+        let quiz2 = document.getElementById('quiz2');
+        let quiz3 = document.getElementById('quiz3');
+        let quiz4 = document.getElementById('quiz4');
+        let quiz1img = document.getElementById('quiz1img');
+        let quiz2img = document.getElementById('quiz2img');
+        let quiz3img = document.getElementById('quiz3img');
+        let quiz4img = document.getElementById('quiz4img');
+
+        hideItems('question-title');
+        hideItems('option-list');
+        hideItems('score-area');
+        hideItems('submit1');
+        hideItems('submit2');
+        hideItems('submit3');
+        hideItems('submit4');
+        hideItems('submitQuiz1');
+        hideItems('submitQuiz2');
+        hideItems('submitQuiz3');
+        hideItems('submitQuiz4');
+        hideItems('play-again');
+        hideItems('start');
+
+        quiz1.addEventListener('click', function () {
+            show('question-title');
+            show('option-list');
+            show('submit1');
+            loadQuestions1();
+            hideItems('quiz1');
+            hideItems('quiz2');
+            hideItems('quiz3');
+            hideItems('quiz4');
+            hideItems('quiz1img');
+            hideItems('quiz2img');
+            hideItems('quiz3img');
+            hideItems('quiz4img');
+        });
+        quiz2.addEventListener('click', function () {
+            show('question-title');
+            show('option-list');
+            show('submit2');
+            loadQuestions2();
+            hideItems('quiz1');
+            hideItems('quiz2');
+            hideItems('quiz3');
+            hideItems('quiz4');
+            hideItems('quiz1img');
+            hideItems('quiz2img');
+            hideItems('quiz3img');
+            hideItems('quiz4img');
+        });
+        quiz3.addEventListener('click', function () {
+            show('question-title');
+            show('option-list');
+            show('submit3');
+            loadQuestions3();
+            hideItems('quiz1');
+            hideItems('quiz2');
+            hideItems('quiz3');
+            hideItems('quiz4');
+            hideItems('quiz1img');
+            hideItems('quiz2img');
+            hideItems('quiz3img');
+            hideItems('quiz4img');
+        });
+        quiz4.addEventListener('click', function () {
+            show('question-title');
+            show('option-list');
+            show('submit4');
+            loadQuestions4();
+            hideItems('quiz1');
+            hideItems('quiz2');
+            hideItems('quiz3');
+            hideItems('quiz4');
+            hideItems('quiz1img');
+            hideItems('quiz2img');
+            hideItems('quiz3img');
+            hideItems('quiz4img');
+        });
+
+        function loadQuestions1() {
+            if (questionNo < data1.length) {
+                if(questionNo == data1.length-1)
+                {
+                    hideItems("submit1");
+                    show("submitQuiz1");
+                }
+                let q = data1[questionNo].qs;
+                let optionsArray = data1[questionNo].options;
+
+                question_title.innerText = q;
+
+                option_list.innerText = "";
+                for (let i = 0; i < optionsArray.length; i++) {
+                    option_list.innerHTML += `
+                <input type="radio" id="${i}" name="${question_title}" class="custom-radio"/>${optionsArray[i]}<br>
+            `;
+                }
+            } else {
+                console.log("no more questions");
+                //show('score-area');
+                score_area.innerText = "Your score is: " + score;
+                hideItems('submit1');
+                hideItems('submitQuiz1');
+                hideItems('question-title');
+                hideItems('option-list');
+                // show('play-again');
+                hideItems('title');
+            }
+        }
+        function loadQuestions2() {
+            if (questionNo < data2.length) {
+                if(questionNo == data2.length-1)
+                {
+                    hideItems("submit2");
+                    show("submitQuiz2");
+                }
+                let q = data2[questionNo].qs;
+                let optionsArray = data2[questionNo].options;
+
+                question_title.innerText = q;
+
+                option_list.innerText = "";
+                for (let i = 0; i < optionsArray.length; i++) {
+                    option_list.innerHTML += `
+                <input type="radio" id="${i}" name="${question_title}" class="custom-radio"/>${optionsArray[i]}<br>
+            `;
+                }
+            } else {
+                console.log("no more questions");
+                //show('score-area');
+                score_area.innerText = "Your score is: " + score;
+                hideItems('submit2');
+                hideItems('submitQuiz2');
+                hideItems('question-title');
+                hideItems('option-list');
+                //show('play-again');
+                hideItems('title');
+            }
+        }
+
+        function loadQuestions3() {
+            if (questionNo < data3.length) {
+                if(questionNo == data3.length-1)
+                {
+                    hideItems("submit3");
+                    show("submitQuiz3");
+                }
+                let q = data3[questionNo].qs;
+                let optionsArray = data3[questionNo].options;
+
+                question_title.innerText = q;
+
+                option_list.innerText = "";
+                for (let i = 0; i < optionsArray.length; i++) {
+                    option_list.innerHTML += `
+                <input type="radio" id="${i}" name="${question_title}" class="custom-radio"/>${optionsArray[i]}<br>
+            `;
+                }
+            } else {
+                console.log("no more questions");
+                //show('score-area');
+                score_area.innerText = "Your score is: " + score;
+                hideItems('submit3');
+                hideItems('submitQuiz3');
+                hideItems('question-title');
+                hideItems('option-list');
+                //show('play-again');
+                hideItems('title');
+            }
+        }
+        function loadQuestions4() {
+            if (questionNo < data4.length) {
+                if(questionNo == data4.length-1)
+                {
+                    hideItems("submit4");
+                    show("submitQuiz4");
+                }
+                let q = data4[questionNo].qs;
+                let optionsArray = data4[questionNo].options;
+
+                question_title.innerText = q;
+
+                option_list.innerText = "";
+                for (let i = 0; i < optionsArray.length; i++) {
+                    option_list.innerHTML += `
+                <input type="radio" id="${i}" name="${question_title}" class="custom-radio"/>${optionsArray[i]}<br>
+            `;
+                }
+            } else {
+                console.log("no more questions");
+                //show('score-area');
+                score_area.innerText = "Your score is: " + score;
+                hideItems('submit4');
+                hideItems('submitQuiz4');
+                hideItems('question-title');
+                hideItems('option-list');
+                //show('play-again');
+                hideItems('title');
+            }
+        }
+
+
+
+        function submitQuizData1() {
+
+            document.getElementById('quiz_id1').value = 1;
+            console.log(score);
+            document.getElementById('grade1').value = score;
+            document.getElementById('quizForm1').submit();
+        }
+
+
+        submitQuiz1.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data1[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions1();
+            console.log(score);
+
+            submitQuizData1();
+
+        });
+        function submitQuizData2() {
+
+            document.getElementById('quiz_id2').value = 2;
+            console.log(score);
+            document.getElementById('grade2').value = score;
+            document.getElementById('quizForm2').submit();
+        }
+
+
+        submitQuiz2.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data2[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions2();
+            console.log(score);
+
+            submitQuizData2();
+
+        });
+
+        function submitQuizData3() {
+
+            document.getElementById('quiz_id3').value = 3;
+            console.log(score);
+            document.getElementById('grade3').value = score;
+            document.getElementById('quizForm3').submit();
+        }
+
+
+        submitQuiz3.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data3[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions3();
+            console.log(score);
+
+            submitQuizData3();
+
+        });
+        function submitQuizData4() {
+
+            document.getElementById('quiz_id4').value = 4;
+            console.log(score);
+            document.getElementById('grade4').value = score;
+            document.getElementById('quizForm4').submit();
+        }
+
+
+        submitQuiz4.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data4[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions4();
+            console.log(score);
+
+            submitQuizData4();
+
+        });
+
+        play_again.addEventListener('click', function () {
+            location.reload();
+        });
+
+
+        btn_submit1.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data1[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions1();
+
+        });
+        btn_submit2.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data2[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions2();
+
+        });
+        btn_submit3.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data3[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions3();
+
+        });
+        btn_submit4.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data4[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions4();
+
+        });
+
+        function getCheckedId() {
+            for (let i = 0; i < 4; i++) {
+                if (document.getElementById(i).checked) {
+                    console.log("you selected:" + i);
+                    return i;
+                }
+            }
+        }
+
+        function hideItems(elementId) {
+            let element = document.getElementById(elementId);
+            if (element) {
+                element.style.display = "none";
+            } else {
+                console.error(`Element with ID '${elementId}' not found.`);
+            }
+        }
+
+        function show(elementId) {
+            let element = document.getElementById(elementId);
+            if (element) {
+                element.style.display = "block";
+            } else {
+                console.error(`Element with ID '${elementId}' not found.`);
+            }
+        }
+
+    </script>
+</section>
+
+
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

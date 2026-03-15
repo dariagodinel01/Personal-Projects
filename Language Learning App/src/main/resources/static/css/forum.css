@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+@import url("../fonts/octin_sports_rg.ttf");
+body {
+    font-family: "Poppins", sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.layout_padding {
+    padding: 90px 0;
+}
+
+
+
+/*header section*/
+.header_section {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.header_section .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.list-nav {
+
+    display: flex;
+}
+.list-nav a{
+    color: #ffffff;
+    padding: 15px;
+    font-size: 12px;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: initial;
+}
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar-brand span {
+    font-size: 23px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* main section */
+.main_section {
+    min-height: 100vh;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.main_section .detail-box {
+    position: relative;
+    z-index: 4;
+    color: #ffffff;
+    padding: 75px 0;
+}
+
+.main_section .detail-box h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+
+.main_section .main_bg_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.main_section .main_bg_box img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: top left;
+    object-position: top left;
+}
+
+.main_section .main_bg_box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(24, 77, 71, 0.2)), to(rgba(24, 77, 71, 0.75)));
+    background: linear-gradient(to right, rgba(24, 77, 71, 0.2), rgba(24, 77, 71, 0.75));
+}
+
+#back-to-top-btn {
+    display: none; /* Initially hide the button */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; /* Ensure it's above other elements */
+    font-size: 16px;
+    background-color: #4D7D82;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#back-to-top-btn:hover {
+    background-color: #3b6064;
+}
+
+
+#chatwindow {
+    display: block; /* Initially hide the button */
+    position: fixed;
+    bottom: 20px;
+    right: 80px;
+    z-index: 99; /* Ensure it's above other elements */
+    font-size: 16px;
+    background-color: #4D7D82;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+
+}
+
+#chatwindow:hover {
+    background-color: #3b6064;
+    border-color:#4D7D82;
+}
+.main_section .detail-box #chatWindowcontainer {
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    bottom: 70px;
+    right: 60px;
+    z-index: 99;
+    border: 5px solid #3b6064;
+    border-radius: 10%;
+}
+.main_section .detail-box #chatContainer {
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    bottom: 70px;
+    right: 60px;
+    z-index: 99;
+    border: 5px solid #3b6064;
+    border-radius: 10%;
+}
+
+/*second section*/
+.second_section .detail-box #questionForm {
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.second_section #questionForm input[type="text"] {
+    padding: 10px;
+    width: 400px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.second_section #questionForm button {
+    padding: 10px 10px;
+    background-color: #3b6064;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.second_section #questionForm button:hover {
+    background-color: #FCBBB8;
+    color: #3b6064;
+
+}
+.forum-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.forum-item {
+    border: 1px solid #ccc;
+    background-color: #A8B9BA;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 700px;
+    max-width: calc(100% - 20px);
+    min-height: 150px;
+
+}
+
+.headline {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.name-user {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+
+}
+
+.time {
+    font-size: 12px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.reply-btn {
+
+    margin-right: 10px;
+}
+
+
+
+.second_section .detail-box #replyContainer {
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    bottom: 70px;
+    right: 60px;
+    z-index: 99;
+    border: 5px solid #3b6064;
+    border-radius: 10%;
+}
+.second_section .detail-box #commentContainer {
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    bottom: 70px;
+    right: 60px;
+    z-index: 99;
+    border: 5px solid #3b6064;
+    border-radius: 10%;
+}
+.forum-item button
+{
+    padding: 5px 5px;
+    background-color: #152d31;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.forum-item button:hover {
+    background-color: #3b6064;
+    color: white;
+
+}
+
+
+.second_section .detail-box #testtogglecontainer {
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    bottom: 70px;
+    right: 60px;
+    z-index: 99;
+    border: 5px solid #3b6064;
+    border-radius: 10%;
+}
+
+.second_section .detail-box .forum-item {
+    position: relative;
+}
+
+.second_section .detail-box .forum-item .table-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 100%;
+    display: none;
+}
+.second_section .detail-box .forum-item .reply-form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #E7ECEC ;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(69, 109, 109, 0.5);
+    width: 100%;
+    max-width: 100%;
+    display: none;
+    align-items: center;
+}
+.second_section .detail-box .forum-item .reply-form #commentText{
+    width: 400px;
+    height: 35px;
+    margin-right: 15px;
+    margin-left: 35px;
+    border-radius: 5px;
+
+}
+.second_section .detail-box .forum-item .comments-list {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #E7ECEC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 100%;
+    display: none;
+}
+.second_section .detail-box .forum-item .comments-item {
+    margin-bottom: 10px;
+}
+.second_section .detail-box .forum-item .comment-info {
+    display: flex;
+    justify-content: space-between;
+}
+.second_section .detail-box .forum-item .comment-time {
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 400px;
+}
+.second_section .detail-box .forum-item .comment-user {
+    font-size: 10px;
+    margin-top: 5px;
+    font-style: italic;
+}
+.second_section .detail-box .forum-item .comment-divider{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #3b6064;
+}
+
+.reply-button,
+.comments-button {
+
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+
+/* footer section*/
+.footer_section {
+    background-color: #4D7D82;
+    color: #ffffff;
+    padding: 75px 0 40px 0;
+    text-align: center;
+}
+
+
+.footer_section .footer-logo {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer_section .footer-col {
+    margin-bottom: 30px;
+}
+
+
+
+.footer_section .footer-logo {
+    display: block;
+    font-weight: bold;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.footer_section .footer-info {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer_section .footer-info p {
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer_section .footer-info p a {
+    color: inherit;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title> Learn Laguages </title>
+
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+  <link href="/css/font.css" rel="stylesheet"/>
+  <link href="/css/french.css" rel="stylesheet"/>
+  <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header_section">
+  <div class="container-fluid">
+    <nav class="navbar">
+      <a href="/home" class="navbar-brand">
+        <span>NewLaguages</span>
+      </a>
+      <div class="list-nav">
+        <div th:unless="${isAuthenticated}">
+          <a href="/french">Learn French</a>
+          <a href="/login">Login</a>
+          <a href="/signin">Sign up</a>
+        </div>
+        <div th:if="${isAuthenticated}">
+          <a th:if="${isAdmin}" href="/admin-page">My Page</a>
+          <a th:if="${isUser}" href="/user-page">My Page</a>
+          <a href="/french">Learn French</a>
+          <a href="/forum">Forum</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="main_section position-relative">
+  <div class="main_bg_box">
+    <img src="/images/frenchmain.jpg" alt="">
+  </div>
+  <div class="main_bg"></div>
+  <div class="container">
+    <div class="col-md-24 ml-auto">
+      <div class="detail-box">
+        <h1>French</h1>
+        <h3>Start learning French today!</h3>
+        <p>Dive into your studies and begin your journey with us.
+          <br>Whether you're new to French or just want to improve, we've got you covered.
+        </p>
+        <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top">Top</button>
+
+        <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+        <div id="chatWindowcontainer" class="window-container" style="display: none;">
+          <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function toggleChatWindow() {
+    var chatWindow = document.getElementById('chatWindowcontainer');
+    chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+  }
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("back-to-top-btn").style.display = "block";
+    } else {
+      document.getElementById("back-to-top-btn").style.display = "none";
+    }
+  }
+
+  function scrollToTop() {
+    document.body.scrollTop = 0; /* For Safari */
+    document.documentElement.scrollTop = 0; /* For Chrome, Firefox, IE and Opera */
+  }
+
+</script>
+
+
+<section class="second_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+        <div class="detail_container">
+          <div class="detail-box">
+            <a href="/grammar">Grammar theory</a>
+
+          </div>
+          <div class="detail-box">
+            <a href="/texts">Texts in both English<br>and the French</a>
+
+          </div>
+          <div class="detail-box">
+
+            <a href="/exercises">Training exercises</a>
+
+          </div>
+          <div class="detail-box">
+            <a href="http://127.0.0.1:5000/" target="_blank">Chatbot assistant</a>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-col">
+
+      </div>
+      <div class="col-md-4 footer-col">
+        <div class="footer_detail">
+          <a href="" class="footer-logo">
+            NewLanguages
+          </a>
+          <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+          </p>
+
+
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-info">
+      <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+        <a href="#">NewLanguages</a></p>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

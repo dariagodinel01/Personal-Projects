@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title> Learn Laguages </title>
+
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+  <link href="/css/font.css" rel="stylesheet"/>
+  <link href="/css/userpage.css" rel="stylesheet"/>
+  <link href="/css/responsive.css" rel="stylesheet"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<header class="header_section">
+  <div class="container-fluid">
+    <nav class="navbar">
+      <a href="/home" class="navbar-brand">
+        <span>NewLaguages</span>
+      </a>
+      <div class="list-nav">
+        <div th:unless="${isAuthenticated}">
+          <a href="/login">Login</a>
+          <a href="/signin">Sign up</a>
+          <a href="/french">Learn French</a>
+          <a href="/forum">Forum</a>
+        </div>
+        <div th:if="${isAuthenticated}">
+          <a href="/french">Learn French</a>
+          <a href="/forum">Forum</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="main_section position-relative">
+  <div class="main_bg_box">
+    <img src="/images/useradmin.jpg" alt="">
+  </div>
+  <div class="main_bg"></div>
+  <div class="container">
+    <div class="col-md-24 ml-auto">
+      <div class="detail-box">
+        <h1>Welcome, <span th:text="${user.fullname}"></span>!</h1>
+        <br>
+        <h3>Your last score is <span th:text="${latestScore}"></span>. I recommend reading this:
+          <span th:if="${latestScore < 5}">
+          <a href="/textslvl1">Le Petit Chaperon</a>
+        </span>
+          <span th:if="${latestScore > 4 and latestScore < 9}">
+          <a href="/textslvl2">Le petit prince</a>
+        </span>
+          <span th:if="${latestScore > 8 and latestScore < 11}">
+          <a href="/textslvl3">L’île mystérieuse</a>
+        </span>
+        </h3>
+        <br>
+        <h3>Do you want to try again?</h3>
+        <br>
+        <a href="/exercises" class="button">Training Exercises</a>
+        <a href="/quiz" class="button">Level Quiz</a>
+        <br><br>
+        <h3>Here you can see your progress:</h3>
+        <button id="progress" class="button">Progress</button>
+        <br><br>
+        <div id="tableContainer" class="table-container" style="display: none;">
+          <button id="closeButton" class="close-button">x</button>
+          <table id="quizes">
+
+            <tr>
+              <th>Quiz ID</th>
+              <th>Score</th>
+              <th>Date when taken</th>
+
+            </tr>
+
+            <tr th:each="quizProgress, iterStat : ${quizes}" th:class="${iterStat.last} ? 'highlighted' : ''">
+              <td th:text="${quizProgress.quiz_id}"></td>
+              <td th:text="${quizProgress.grade}"></td>
+              <td th:text="${quizProgress.completionTime}"></td>
+            </tr>
+
+
+          </table>
+        </div>
+
+        <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+        <div id="chatWindowcontainer" class="window-container" style="display: none;">
+          <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+        </div>
+
+        <!--  <button onclick="toggleForum()" id="forum" title="Ask the community">Forum</button>-->
+
+        <div id="forumWindowcontainer" class="window-container" style="display: none;">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+
+
+
+  function toggleChatWindow() {
+    var chatWindow = document.getElementById('chatWindowcontainer');
+    chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+  }
+
+
+  document.getElementById('progress').addEventListener('click', function() {
+
+    var tableContainer = document.getElementById('tableContainer');
+
+    if (tableContainer.style.display === 'none' || tableContainer.style.display === '') {
+      tableContainer.style.display = 'block';
+    } else {
+      tableContainer.style.display = 'none';
+    }
+  });
+
+
+  document.getElementById('closeButton').addEventListener('click', function() {
+
+    var tableContainer = document.getElementById('tableContainer');
+
+    tableContainer.style.display = 'none';
+  });
+
+</script>
+
+
+<footer class="footer_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-col">
+
+      </div>
+      <div class="col-md-4 footer-col">
+        <div class="footer_detail">
+          <a href="" class="footer-logo">
+            NewLanguages
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-info">
+      <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+        <a href="#">NewLanguages</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/login.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="auth_section layout_padding">
+    <div class="auth_bg_box">
+        <img src="/images/login.jpg" alt="">
+    </div>
+    <div class="slider_bg"></div>
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>Login</h2>
+        </div>
+        <div class="">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <form th:action="@{/login}" method="post">
+                        <div class="auth_form-container">
+                            <div class="row">
+                                <input type="email" id="username"  name="username" placeholder="E-mail">
+                                <input type="password" id="password" name="password" placeholder="Password">
+                            </div>
+                            <a class="btn">
+                                <button type="submit">Log in</button>
+                            </a>
+                            <a href="/signin" class="new-acc">
+                                <span>Make a new account</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

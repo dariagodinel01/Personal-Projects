@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+
+                <div class="list-nav">
+                    <div th:unless="${isAuthenticated}">
+                        <a href="/french">Learn French</a>
+                        <a href="/login">Login</a>
+                        <a href="/signin">Sign up</a>
+                    </div>
+                    <div th:if="${isAuthenticated}">
+                        <a th:if="${isAdmin}" href="/admin-page">My Page</a>
+                        <a th:if="${isUser}" href="/user-page">My Page</a>
+                        <a href="/french">Learn French</a>
+                        <a href="/forum">Forum</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="main_section position-relative">
+    <div class="main_bg_box">
+        <img src="/images/home2.jpg" alt="">
+    </div>
+    <div class="main_bg"></div>
+    <div class="container">
+        <div class="col-md-6 ml-auto">
+            <div class="detail-box">
+                <h1>Do you want to learn <br>a new langauge?</h1>
+                <p> Explore our language learning platform, which is designed to make learning a new
+                    language enjoyable, engaging, and effective. Whether you are a novice or want
+                    to enhance your language skills, we have materials for you.
+                </p>
+                <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top">Top</button>
+                <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+                <div id="chatWindowcontainer" class="window-container" style="display: none;">
+                    <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function toggleChatWindow() {
+        var chatWindow = document.getElementById('chatWindowcontainer');
+        chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+    }
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("back-to-top-btn").style.display = "block";
+        } else {
+            document.getElementById("back-to-top-btn").style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; /* For Safari */
+        document.documentElement.scrollTop = 0; /* For Chrome, Firefox, IE and Opera */
+    }
+
+</script>
+
+
+<section class="second_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="detail_container">
+                    <div class="detail-box">
+                        <img src="images/s1.png" alt="">
+                        <h5>Grammar theory</h5>
+                        <p>Explore the principles of grammar with our detailed guides and explanations.
+                            From simple sentence structure to sophisticated grammar principles, learn
+                            the fundamentals of language with ease.
+                        </p>
+                    </div>
+                    <div class="detail-box">
+                        <img src="images/s2.png" alt="">
+                        <h5>Texts in both english<br>and the desired language</h5>
+                        <p> Our collection includes stories with different difficulty levels, providing
+                            valuable exposure to real-world language usage.
+                        </p>
+                    </div>
+                    <div class="detail-box">
+                        <img src="images/s3.png" alt="">
+                        <h5>Training exercises</h5>
+                        <p> Improve your language skills with our collection of training tasks. Track your progress and watch your skills improve.
+                        </p>
+                    </div>
+                    <div class="detail-box">
+                        <img src="images/s3.png" alt="">
+                        <h5>Chatbot assistant</h5>
+                        <p>Need help or practice in real time? Engage with our chatbot helper, who is available 24/7 to
+                            answer your inquiries, provide feedback, and provide conversational practice.
+                            Engage in interactive conversations to improve your speaking and comprehension abilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5 ml-auto">
+                <div class="img-box">
+                    <img src="/images/welcome.png" alt="">
+                </div> </div>
+        </div>
+    </div>
+</section>
+
+<section class="third_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>Learn French</h2>
+        </div>
+        <div class="carousel slide" id="carouselExampleControls" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="/images/french.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h4>International usage</h4>
+                            <p>Do you speak French? Begin your journey to fluency in French with our personalized French language classes. Whether you're interested in French culture, planning a vacation to France, or learning for personal or professional reasons, we have you covered.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="form_section layout_padding">
+    <div class="form_bg_box">
+        <img src="" alt="">
+    </div>
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>What other languages <br>would you like to learn? </h2>
+        </div>
+        <div class="">
+            <div class="row">
+                <div class="col-md-7 mx-auto">
+                    <form action="/home" method="post">
+                        <div class="form_form-container">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" name="name" placeholder="Name">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" name="email" placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <input type="text" name="message" placeholder="Your message" class="message_input" />
+                            </div>
+                            <div class="btn_box">
+                                <button type="submit">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+</body>
+</html>

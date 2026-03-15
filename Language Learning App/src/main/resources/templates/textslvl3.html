@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/texts.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+                <a th:if="${isAdmin}" href="/admin-page">My Page</a>
+                <a th:if="${isUser}" href="/user-page">My Page</a>
+                <a href="/french">Learn French</a>
+                <a href="/forum">Forum</a>
+                <a href="/logout" >Logout</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="main_section position-relative">
+    <div class="main_bg_box">
+        <img src="/images/texts.jpg" alt="">
+    </div>
+    <div class="main_bg"></div>
+    <div class="container">
+        <div class="col-md-12 ml-auto">
+            <div class="detail-box">
+                <h1>Advanced</h1>
+                <p>Texts in both English and French for advanced level.
+
+                </p>
+                <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top">Top</button>
+
+                <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+                <div id="chatWindowcontainer" class="window-container" style="display: none;">
+                    <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const popups = document.querySelectorAll(".popup");
+        popups.forEach(function (popup) {
+            const translation = popup.getAttribute("data-translate");
+            const popuptext = popup.querySelector(".popuptext");
+            popuptext.innerHTML = translation;
+        });
+    });
+    function toggleChatWindow() {
+        var chatWindow = document.getElementById('chatWindowcontainer');
+        chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+    }
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("back-to-top-btn").style.display = "block";
+        } else {
+            document.getElementById("back-to-top-btn").style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; /* For Safari */
+        document.documentElement.scrollTop = 0; /* For Chrome, Firefox, IE and Opera */
+    }
+
+</script>
+
+<section class="second_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-12">
+                <div class="detail_container">
+                    <div class="detail-box">
+
+                        <a href="/quiz">Retake the quiz?</a>
+                        <br>
+                        <h1><span class="popup" data-translate="The Mysterious Island">L’île mystérieuse<span class="popuptext">The Mysterious Island</span></span>
+                        </h1>
+                        <h5>~Jules Verne~</h5>
+                        <br>
+
+                        <p>En quelques mots, Gédéon Spilett, Harbert et
+                            Nab furent mis au courant de la situation. Cet
+                            accident, qui pouvait avoir des conséquences fort
+                            graves – du moins Pencroff l’envisageait ainsi –
+                            produisit des effets divers sur les compagnons de
+                            l’honnête marin.
+                            <br>
+                            Nab, tout à la joie d’avoir retrouvé son maître,
+                            n’écouta pas, ou plutôt ne voulut pas même se
+                            préoccuper de ce que disait Pencroff.
+                            <br>
+                            Harbert, lui, parut partager dans une certaine
+                            mesure les appréhensions du marin.
+                            <br>
+                            Quant au reporter, aux paroles de Pencroff, il
+                            répondit simplement :
+                            <br>
+                            « Sur ma foi, Pencroff, voilà qui m’est bien
+                            égal !
+                            <br>
+                            – Mais, je vous répète que nous n’avons plus
+                            de feu !
+                            <br>
+                            – Peuh !
+                            <br>
+                            – <span class="popup" data-translate="Nor any means of relighting it"><b>Ni aucun moyen de le rallumer.</b><span class="popuptext">Nor any means of relighting it</span></span>
+                            <br>
+                            – Baste !
+                            <br>
+                            – Pourtant, monsieur Spilett...
+                            <br>
+                            – Est-ce que Cyrus n’est pas là ? répondit le
+                            reporter. Est-ce qu’il n’est pas vivant, notre
+                            ingénieur ? Il trouvera bien le moyen de nous
+                            faire du feu, lui !
+                            <br>
+                            – Et avec quoi ?
+                            <br>
+                            – Avec rien. »
+                            <br>
+                            Qu’eût répondu Pencroff ? Il n’eût pas
+                            répondu, car, au fond, il partageait la confiance
+                            que ses compagnons avaient en Cyrus Smith.
+                            L’ingénieur était pour eux un microcosme, un
+                            composé de toute la science et de toute
+                            l’intelligence humaine ! Autant valait se trouver
+                            avec Cyrus dans une île déserte que sans Cyrus
+                            dans la plus industrieuse ville de l’Union. Avec
+                            lui, on ne pouvait manquer de rien. Avec lui, on
+                            ne pouvait désespérer. On serait venu dire à ces
+                            braves gens qu’une éruption volcanique allait
+                            anéantir cette terre, que cette terre allait
+                            s’enfoncer dans les abîmes du Pacifique, qu’ils
+                            eussent <span class="popup" data-translate="imperturbably"><b>imperturbablement </b><span class="popuptext">imperturbably</span></span>
+                            répondu : « Cyrus est
+                            là ! Voyez Cyrus ! »
+                            <br>
+
+                            En attendant, toutefois, l’ingénieur était encore
+                            plongé dans une nouvelle prostration que le
+                            transport avait déterminée, et on ne pouvait faire
+                            appel à son ingéniosité en ce moment. Le souper
+                            devait nécessairement être fort maigre. En effet,
+                            toute la chair de tétras avait été consommée, et il
+                            n’existait aucun moyen de faire cuire un gibier
+                            quelconque. D’ailleurs, les couroucous qui
+                            servaient de réserve avaient disparu. Il fallait
+                            donc aviser.
+                            <br>
+                            Avant tout, Cyrus Smith fut transporté dans le
+                            couloir central. Là, on parvint à lui arranger une
+                            couche d’algues et de varechs restés à peu près
+                            secs. Le profond sommeil qui s’était emparé de
+                            lui ne pouvait que réparer rapidement ses forces,
+                            et mieux, sans doute, que ne l’eût fait une
+                            nourriture abondante.
+                            <br>
+                            La nuit était venue, et, avec elle, la
+                            température, modifiée par une saute du vent dans
+                            le nord-est, se refroidit sérieusement. Or, comme
+                            la mer avait détruit les cloisons établies par
+                            Pencroff en certains points des couloirs, des
+                            courants d’air s’établirent, qui rendirent les
+                            <span class="popup" data-translate="Chimneys"><b>Cheminées </b><span class="popuptext">Chimneys</span></span>
+                            peu habitables. L’ingénieur se fût
+                            donc trouvé dans des conditions assez mauvaises,
+                            si ses compagnons, se dépouillant de leur veste
+                            ou de leur vareuse, ne l’eussent soigneusement
+                            couvert.
+                            <br>
+                            Le souper, ce soir-là, ne se composa que de
+                            ces inévitables lithodomes, dont Harbert et Nab
+                            firent une ample récolte sur la grève. Cependant,
+                            à ces mollusques, le jeune garçon joignit une
+                            certaine quantité <span class="popup" data-translate="edible sea-weed"><b>d’algues comestibles</b><span class="popuptext">edible sea-weed</span></span>
+                            , qu’il ramassa sur de hautes roches dont la mer ne
+                            devait mouiller les parois qu’à l’époque des
+                            grandes marées. Ces algues, appartenant à la
+                            famille des fucacées, étaient des espèces de
+                            sargasses qui, sèches, fournissent une matière
+                            gélatineuse assez riche en éléments nutritifs. Le
+                            reporter et ses compagnons, après avoir absorbé
+                            une quantité considérable de lithodomes, sucèrent
+                            donc ces sargasses, auxquelles ils trouvèrent un
+                            goût très supportable, et il faut dire que, sur les
+                            rivages asiatiques, elles entrent pour une notable
+                            proportion dans l’alimentation des indigènes.
+                            <br>
+                            « N’importe ! dit le marin, il est temps que M.
+                            Cyrus nous vienne en aide. »
+                            <br>
+                            Cependant <span class="popup" data-translate="the cold became very severe"><b>le froid devint très vif</b><span class="popuptext">the cold became very severe</span></span>
+                            et, par
+                            malheur, il n’y avait aucun moyen de le
+                            combattre.
+                            <br>
+                            Le marin, véritablement vexé, chercha par
+                            tous les moyens possibles à se procurer du feu.
+                            Nab l’aida même dans cette opération. Il avait
+                            trouvé quelques mousses sèches, et, en frappant
+                            deux <span class="popup" data-translate="pebbles "><b>galets</b><span class="popuptext">pebbles </span></span>
+                            , il obtint <span class="popup" data-translate="sparks"><b>des étincelles</b><span class="popuptext">sparks</span></span>
+                            ; mais la
+                            mousse, n’étant pas assez inflammable, ne prit
+                            pas, et, d’ailleurs, ces étincelles, qui n’étaient que
+                            du silex incandescent, n’avaient pas la
+                            consistance de celles qui s’échappent du morceau
+                            d’acier dans le briquet usuel. L’opération ne
+                            réussit donc pas.
+                            <br>
+                            Pencroff, bien qu’il n’eût aucune confiance
+                            dans le procédé, essaya ensuite de frotter deux
+                            morceaux de bois sec l’un contre l’autre, à la
+                            manière des sauvages. Certes, le mouvement que
+                            Nab et lui se donnèrent, s’il se fût transformé en
+                            chaleur, suivant les théories nouvelles, aurait
+                            <span class="popup" data-translate="enough to heat the boiler of a steamer"><b>suffi à faire bouillir une chaudière de steamer</b><span class="popuptext">enough to heat the boiler of a steamer</span></span>
+                            !
+                            Le résultat fut nul. Les morceaux de bois
+                            s’échauffèrent, voilà tout, et encore beaucoup
+                            moins que les opérateurs eux-mêmes.
+                            <br>
+                            Après une heure de travail, Pencroff était en
+                            nage, et il jeta les morceaux de bois avec dépit.
+                            <br>
+                            « Quand on me fera croire que les sauvages
+                            allument du feu de cette façon, dit-il, il fera
+                            chaud, même en hiver ! J’allumerais plutôt mes
+                            bras en les frottant l’un contre l’autre ! »
+                            <br>
+                            Le marin avait tort de nier le procédé. Il est
+                            constant que les sauvages enflamment le bois au
+                            moyen d’un frottement rapide. Mais toute espèce
+                            de bois n’est pas propre à cette opération, et puis,
+                            il y a « le coup », suivant l’expression consacrée,
+                            et il est probable que Pencroff n’avait pas « le
+                            coup. »
+                            <br>
+                            La mauvaise humeur de Pencroff ne fut pas de
+                            longue durée. Ces deux morceaux de bois rejetés
+                            par lui avaient été repris par Harbert, qui
+                            s’évertuait à les frotter de plus belle. Le robuste
+                            marin ne put retenir un éclat de rire, en voyant les
+                            efforts de l’adolescent pour réussir là où, lui, il
+                            avait échoué.
+                            <br>
+                            « Frottez, mon garçon, frottez ! dit-il.
+                            <br>
+                            – Je frotte, répondit Harbert en riant, mais je
+                            n’ai pas d’autre prétention que de m’échauffer à
+                            mon tour au lieu <span class="popup" data-translate="shivering"><b>de grelotter</b><span class="popuptext">shivering</span></span>
+                            , et bientôt j’aurai
+                            aussi chaud que toi, Pencroff ! »
+                            <br>
+                            Ce qui arriva. Quoi qu’il en fût, il fallut
+                            renoncer, pour cette nuit, à se procurer du feu.
+                            Gédéon Spilett répéta une vingtième fois que
+                            Cyrus Smith ne serait pas embarrassé pour si peu.
+                            Et, en attendant, il s’étendit dans un des couloirs,
+                            sur la couche de sable. Harbert, Nab et Pencroff
+                            l’imitèrent, tandis que Top dormait aux pieds de
+                            son maître.
+                            <br>
+
+                            Le lendemain, 28 mars, quand l’ingénieur se
+                            réveilla, vers huit heures du matin, il vit ses
+                            compagnons près de lui, qui guettaient son réveil,
+                            et, comme la veille, ses premières paroles furent :
+                            <br>
+                            « Île ou continent ? »
+                            <br>
+                            On le voit, c’était son idée fixe.
+                            <br>
+                            « Bon ! répondit Pencroff, nous n’en savons
+                            rien, monsieur Smith !
+                            <br>
+                            – Vous ne savez pas encore ?...
+                            <br>
+                            – Mais nous le saurons, ajouta Pencroff, quand
+                            vous nous aurez piloté dans ce pays.
+                            <br>
+                            – Je crois être en état de l’essayer, répondit
+                            l’ingénieur, qui, sans trop d’efforts, se leva et se
+                            tint debout.
+                            <br>
+                            – Voilà qui est bon ! s’écria le marin.
+                            <br>
+                            – Je mourais surtout d’épuisement, répondit
+                            Cyrus Smith. Mes amis, un peu de nourriture, et
+                            il n’y paraîtra plus. – Vous avez du feu, n’est-ce
+                            pas ? »
+                            <br>
+                            Cette demande n’obtint pas une réponse
+                            immédiate. Mais, après quelques instants :
+                            <br>
+
+                            « Hélas ! nous n’avons pas de feu, dit
+                            Pencroff, ou plutôt, monsieur Cyrus, nous n’en
+                            avons plus ! »
+                            <br>
+                            Et le marin fit le récit de ce qui s’était passé la
+                            veille. Il égaya l’ingénieur en lui racontant
+                            l’histoire de leur unique allumette, puis sa
+                            tentative avortée pour se procurer du feu à la
+                            façon des sauvages.
+                            <br>
+                            « Nous aviserons, répondit l’ingénieur, et si
+                            nous ne trouvons pas une substance analogue à
+                            l’amadou...
+                            <br>
+                            – Eh bien ? demanda le marin.
+                            <br>
+                            – Eh bien, nous ferons des allumettes.
+                            <br>
+                            – Chimiques ?
+                            <br>
+                            – Chimiques !
+                            <br>
+                            – Ce n’est pas plus difficile que cela », s’écria
+                            le reporter, en frappant sur l’épaule du marin.
+                            Celui-ci ne trouvait pas la chose si simple,
+                            mais il ne protesta pas. Tous sortirent. Le temps
+                            était redevenu beau. Un vif soleil se levait sur
+                            l’horizon de la mer, et piquait de <span class="popup" data-translate="golden spangles the prismatic rugosities"><b>paillettes d’or
+                            les rugosités prismatiques</b><span class="popuptext">golden spangles the prismatic rugosities</span></span>
+                            de l’énorme muraille.
+                            <br>
+                            Après avoir jeté un rapide coup d’œil autour
+                            de lui, l’ingénieur s’assit sur un quartier de roche.
+                            Harbert lui offrit quelques poignées de moules et
+                            de sargasses, en disant :
+                            <br>
+                            « C’est tout ce que nous avons, monsieur
+                            Cyrus.
+                            <br>
+                            – Merci, mon garçon, répondit Cyrus Smith,
+                            cela suffira, – pour ce matin, du moins. »
+                            <br>
+                            Et il mangea avec appétit cette maigre
+                            nourriture, qu’il arrosa d’un peu d’eau fraîche,
+                            puisée à la rivière dans une vaste coquille.
+                            <br>
+                            Ses compagnons le regardaient sans parler.
+                            Puis, après s’être rassasié tant bien que mal,
+                            Cyrus Smith, <span class="popup" data-translate="crossing his arms"><b>croisant ses bras</b><span class="popuptext">crossing his arms</span></span>
+                            , dit :
+                            <br>
+                            « Ainsi, mes amis, vous ne savez pas encore si
+                            le sort nous a jetés sur un continent ou sur une
+                            île ?
+                            <br>
+                            – Non, monsieur Cyrus, répondit le jeune
+                            garçon.
+                            <br>
+                            – Nous le saurons demain, reprit l’ingénieur.
+                            Jusque-là, il n’y a rien à faire.
+                            <br>
+                            – Si, répliqua Pencroff.
+                            <br>
+                            – Quoi donc ?
+                            <br>
+                            – Du feu, dit le marin, qui, lui aussi, avait son
+                            idée fixe.
+                            <br>
+                            – Nous en ferons, Pencroff, répondit Cyrus
+                            Smith. – Pendant que vous me transportiez, hier,
+                            n’ai-je pas aperçu, dans l’ouest, une montagne
+                            qui domine cette contrée ?
+                            <br>
+                            – Oui, répondit Gédéon Spilett, une montagne
+                            qui doit être assez élevée...
+                            <br>
+                            – Bien, reprit l’ingénieur. Demain, nous
+                            monterons à son sommet, et nous verrons si cette
+                            terre est une île ou un continent. Jusque-là, je le
+                            répète, rien à faire.
+                            <br>
+                            – Si, du feu ! dit encore l’entêté marin.
+                            <br>
+                            – Mais on en fera, du feu ! répliqua Gédéon
+                            Spilett. Un peu de patience, Pencroff ! »
+                            <br>
+                            Le marin regarda Gédéon Spilett d’un air qui
+                            semblait dire : « S’il n’y a que vous pour en faire,
+                            nous ne tâterons pas du rôti de sitôt ! » Mais il se
+                            tut.
+                            <br>
+                            <span class="popup" data-translate="however"><b>Cependant</b><span class="popuptext">however</span></span>
+                            Cyrus Smith n’avait point répondu.
+                            Il semblait fort peu préoccupé de cette question
+                            du feu. Pendant quelques instants, il demeura
+                            absorbé dans ses réflexions. Puis, reprenant la
+                            parole :
+                            <br>
+                            « Mes amis, dit-il, notre situation est peut-être
+                            déplorable, mais, en tout cas, elle est fort simple.
+                            Ou nous sommes sur un continent, et alors, au
+                            prix de fatigues plus ou moins grandes, nous
+                            gagnerons quelque point habité, ou bien nous
+                            sommes sur une île. Dans ce dernier cas, de deux
+                            choses l’une : si l’île est habitée, nous verrons à
+                            nous tirer d’affaire avec ses habitants ; si elle est
+                            déserte, nous verrons à nous tirer d’affaire tout
+                            seuls.
+                            <br>
+                            – Il est certain que rien n’est plus simple,
+                            répondit Pencroff.
+                            <br>
+                            – Mais, que ce soit un continent ou une île,
+                            demanda Gédéon Spilett, où pensez-vous, Cyrus,
+                            que cet ouragan nous ait jetés ?
+                            <br>
+                            – Au juste, je ne puis le savoir, répondit
+                            l’ingénieur, mais les présomptions sont pour une
+                            terre du Pacifique. En effet, quand nous avons
+                            quitté Richmond, le vent soufflait du nord-est, et
+                            sa violence même prouve que sa direction n’a pas
+                            dû <span class="popup" data-translate="to vary"><b>varier</b><span class="popuptext">to vary</span></span>
+                            . Si cette direction s’est maintenue du
+                            nord-est au sud-ouest, nous avons traversé les
+                            états de la Caroline du Nord, de la Caroline du
+                            Sud, de la Géorgie, le golfe du Mexique, le
+                            Mexique lui-même, dans sa partie étroite, puis
+                            une portion de l’océan Pacifique. Je n’estime pas
+                            à moins de six à sept mille milles la distance
+                            parcourue par le ballon, et, pour peu que le vent
+                            ait varié d’un demi-quart, il a dû nous porter soit
+                            sur l’archipel de Mendana, soit sur les Pomotou,
+                            soit même, s’il avait une vitesse plus grande que
+                            je ne le suppose, jusqu’aux terres de la NouvelleZélande. Si cette dernière hypothèse s’est
+                            réalisée, notre rapatriement sera facile. Anglais
+                            ou Maoris, nous trouverons toujours à qui parler.
+                            Si, au contraire, cette côte appartient à quelque île
+                            déserte d’un archipel micronésien, peut-être
+                            pourrons-nous le reconnaître du haut de ce cône
+                            qui domine la contrée, et alors nous aviserons à
+                            nous établir ici, comme si nous ne devions jamais
+                            en sortir !
+                            <br>
+                            – Jamais ! s’écria le reporter. Vous dites :
+                            jamais ! mon cher Cyrus ?
+                            <br>
+                            – Mieux vaut mettre les choses au pis tout de
+                            suite, répondit l’ingénieur, et ne se réserver que la
+                            surprise du mieux.
+                            <br>
+                            – Bien dit ! répliqua Pencroff. Et il faut
+                            espérer aussi que cette île, si c’en est une, ne sera
+                            pas précisément située en dehors de la route des
+                            navires ! Ce serait là véritablement jouer de
+                            malheur !
+                            <br>
+                            – Nous ne saurons à quoi nous en tenir
+                            qu’après avoir fait, et avant tout, l’ascension de la
+                            montagne, répondit l’ingénieur.
+                            <br>
+                            – Mais demain, monsieur Cyrus, demanda
+                            Harbert, serez-vous en état de supporter les
+                            fatigues de cette ascension ?
+                            <br>
+                            – Je l’espère, répondit l’ingénieur, mais à la
+                            condition que maître Pencroff et toi, mon enfant,
+                            vous vous montriez chasseurs intelligents et
+                            adroits.
+                            <br>
+                            – Monsieur Cyrus, répondit le marin, puisque
+                            vous parlez de gibier, si, à mon retour, j’étais
+                            aussi certain de pouvoir le faire rôtir que je suis
+                            certain de le rapporter...
+                            <br>
+                            – Rapportez toujours, Pencroff », répondit
+                            Cyrus Smith.
+                            <br>
+                            Il fut donc convenu que l’ingénieur et le
+                            reporter passeraient la journée aux Cheminées,
+                            afin d’examiner le littoral et le plateau supérieur.
+                            Pendant ce temps, Nab, Harbert et le marin
+                            retourneraient à la forêt, y <span class="popup" data-translate="would renew"><b>renouvelleraient</b><span class="popuptext">would renew</span></span>
+                            la
+                            provision de bois, et feraient main basse sur toute
+                            bête de plume ou de poil qui passerait à leur
+                            portée.
+                            <br>
+                            Ils partirent donc, vers dix heures du matin,
+                            Harbert confiant, Nab joyeux, Pencroff
+                            murmurant à part lui :
+                            <br>
+                            « Si, à mon retour, je trouve du feu à la
+                            maison, c’est que le tonnerre en personne sera
+                            venu l’allumer ! »
+                            <br>
+                            Tous trois remontèrent la berge, et, arrivés au
+                            coude que formait la rivière, le marin, s’arrêtant,
+                            dit à ses deux compagnons :
+                            <br>
+                            « Commençons-nous par être chasseurs ou
+                            bûcherons ?
+                            <br>
+                            – Chasseurs, répondit Harbert. Voilà déjà Top
+                            qui est en quête.
+                            <br>
+                            – Chassons donc, reprit le marin ; puis, nous
+                            reviendrons ici faire notre provision de bois. »
+                            Cela dit, Harbert, Nab et Pencroff, après avoir
+                            arraché trois bâtons au tronc d’un jeune sapin,
+                            suivirent Top, qui <span class="popup" data-translate="bounding "><b>bondissait</b><span class="popuptext">bounding </span></span>
+                            dans les grandes
+                            herbes.
+                            <br>
+                            Cette fois, les chasseurs, au lieu de longer le
+                            cours de la rivière, s’enfoncèrent plus
+                            directement au cœur même de la forêt. C’étaient
+                            toujours les mêmes arbres, appartenant pour la
+                            plupart à la famille des pins. En de certains
+                            endroits, moins pressés, isolés par bouquets, ces
+                            pins présentaient des dimensions considérables,
+                            et semblaient indiquer, par leur développement,
+                            que cette contrée se trouvait plus élevée en
+                            latitude que ne le supposait l’ingénieur. Quelques
+                            clairières, hérissées de souches rongées par le
+                            temps, étaient couvertes de bois mort, et
+                            formaient ainsi d’inépuisables réserves de
+                            combustible. Puis, la clairière passée, le taillis se
+                            resserrait et devenait presque impénétrable.
+                            <br>
+                            Se guider au milieu de ces massifs d’arbres,
+                            sans aucun <span class="popup" data-translate="beaten track"><b>chemin frayé</b><span class="popuptext">beaten track</span></span>
+                            , était chose assez
+                            difficile. Aussi, le marin, de temps en temps,
+                            jalonnait-il sa route en faisant quelques brisées
+                            qui devaient être aisément reconnaissables. Mais
+                            peut-être avait-il eu tort de ne pas remonter le
+                            cours d’eau, ainsi qu’Harbert et lui avaient fait
+                            pendant leur première excursion, car, après une
+                            heure de marche, pas un gibier ne s’était encore
+                            montré. Top, en courant sous les basses ramures,
+                            ne donnait l’éveil qu’à des oiseaux qu’on ne
+                            pouvait approcher. Les couroucous eux-mêmes
+                            étaient absolument invisibles, et il était probable
+                            que le marin serait forcé de revenir à cette partie
+                            marécageuse de la forêt, dans laquelle il avait si
+                            heureusement opéré sa pêche aux tétras.
+                            <br>
+                            « Eh ! Pencroff, dit Nab d’un ton un peu
+                            sarcastique, si c’est là tout le gibier que vous avez
+                            promis de rapporter à mon maître, il ne faudra
+                            pas grand feu pour <span class="popup" data-translate="to roast"><b>le faire rôtir</b><span class="popuptext">to roast</span></span>
+                            !
+                            <br>
+                            – Patience, Nab, répondit le marin, ce n’est
+                            pas le gibier qui manquera au retour !
+                            <br>
+                            – Vous n’avez donc pas confiance en M.
+                            Smith ?
+                            <br>
+                            – Si.
+                            <br>
+                            – Mais vous ne croyez pas qu’il fera du feu ?
+                            <br>
+                            – Je le croirai quand le bois flambera dans le
+                            foyer.
+                            <br>
+                            – Il flambera, puisque mon maître l’a dit !
+                            <br>
+                            – Nous verrons ! »
+                            <br>
+                            Cependant, le soleil n’avait pas encore atteint
+                            le plus haut point de sa course au-dessus de
+                            l’horizon. L’exploration continua donc, et fut
+                            utilement marquée par la découverte qu’Harbert
+                            fit d’un arbre dont les fruits étaient comestibles.
+                            C’était le pin pignon, qui produit une amande
+                            excellente, très estimée dans les régions
+                            tempérées de l’Amérique et de l’Europe. Ces
+                            amandes étaient dans un parfait état de maturité,
+                            et Harbert les signala à ses deux compagnons, qui
+                            <span class="popup" data-translate="feasted on them"><b>s’en régalèrent</b><span class="popuptext">feasted on them</span></span>
+                            .
+                            <br>
+                            « Allons, dit Pencroff, des algues en guise de
+                            pain, des moules crues en guise de chair, et des
+                            amandes pour dessert, voilà bien le dîner de gens
+                            qui n’ont plus une seule allumette dans leur
+                            poche !
+                            <br>
+                            – Il ne faut pas se plaindre, répondit Harbert.
+                            <br>
+                            – Je ne me plains pas, mon garçon, répondit
+                            Pencroff. Seulement, je répète que la viande est
+                            un peu trop économisée dans ce genre de repas !
+                            <br>
+                            – Top a vu quelque chose !... » s’écria Nab,
+                            qui courut vers un fourré au milieu duquel le
+                            chien avait disparu en aboyant. Aux aboiements
+                            de Top se mêlaient <span class="popup" data-translate="gruntings"><b>des grognements</b><span class="popuptext">gruntings</span></span>
+                            singuliers.
+                            <br>
+                            Le marin et Harbert avaient suivi Nab. S’il y
+                            avait là quelque gibier, ce n’était pas le moment
+                            de discuter comment on pourrait le faire cuire,
+                            mais bien comment on pourrait s’en emparer.
+                            <br>
+                            Les chasseurs, à peine entrés dans le taillis,
+                            virent Top aux prises avec un animal qu’il tenait
+                            par une oreille. Ce quadrupède était une espèce
+                            de porc long de deux pieds et demi environ, d’un
+                            brun noirâtre mais moins foncé au ventre, ayant
+                            un poil dur et peu épais, et dont les doigts, alors
+                            fortement appliqués sur le sol, semblaient réunis
+                            par des membranes.
+                            <br>
+                            Harbert crut reconnaître en cet animal un
+                            cabiai, c’est-à-dire un des plus grands
+                            échantillons de l’ordre des rongeurs.
+                            <br>
+                            Cependant, le cabiai ne se débattait pas contre
+                            le chien. Il roulait bêtement ses gros yeux
+                            profondément engagés dans une épaisse couche
+                            de graisse. Peut-être voyait-il des hommes pour la
+                            première fois.
+                            <br>
+                            Cependant, Nab, ayant assuré son bâton dans
+                            sa main, <span class="popup" data-translate="was just going to fell the pig"><b>allait assommer le rongeur</b><span class="popuptext">was just going to fell the pig</span></span>
+                            , quand celuici, s’arrachant aux dents de Top, qui ne garda
+                            qu’un bout de son oreille, poussa un vigoureux
+                            grognement, se précipita sur Harbert, le renversa
+                            à demi, et disparut à travers bois.
+                            <br>
+                            « Ah ! le gueux ! » s’écria Pencroff.
+                            <br>
+                            Aussitôt tous trois s’étaient lancés sur les
+                            traces de Top, et au moment où ils allaient le
+                            rejoindre, l’animal disparaissait sous les eaux
+                            d’une vaste mare, ombragée par de grands pins
+                            séculaires.
+                            <br>
+                            Nab, Harbert, Pencroff s’étaient arrêtés,
+                            immobiles. Top <span class="popup" data-translate="plunged into the water"><b>s’était jeté à l’eau</b><span class="popuptext">plunged into the water</span></span>
+                            , mais le cabiai,
+                            caché au fond de la mare, ne paraissait plus.
+                            <br>
+                            « Attendons, dit le jeune garçon, car il viendra
+                            bientôt respirer à la surface.
+                            <br>
+                            – Ne se noiera-t-il pas ? demanda Nab.
+                            <br>
+                            – Non, répondit Harbert, puisqu’il a les pieds
+                            palmés, et c’est presque un amphibie. Mais
+                            guettons-le. »
+                            <br>
+                            Top était resté à la nage. Pencroff et ses deux
+                            compagnons allèrent occuper chacun un point de
+                            la berge, afin de couper toute retraite au cabiai,
+                            que le chien cherchait en nageant à la surface de
+                            la mare.
+                            <br>
+                            Harbert ne se trompait pas. Après quelques
+                            minutes, l’animal remonta au-dessus des eaux.
+                            Top d’un bond fut sur lui, et l’empêcha de
+                            plonger à nouveau. Un instant plus tard, le cabiai,
+                            traîné jusqu’à la berge, était assommé d’un coup
+                            du bâton de Nab.
+                            <br>
+                            « Hurrah ! s’écria Pencroff, qui employait
+                            volontiers ce cri de triomphe. Rien qu’un charbon
+                            ardent, et ce rongeur sera rongé jusqu’aux os ! »
+                            <br>
+                            Pencroff <span class="popup" data-translate="hoisted the capybara"><b>chargea le cabiai</b><span class="popuptext">hoisted the capybara</span></span>
+                            sur son épaule, et,
+                            jugeant à la hauteur du soleil qu’il devait être
+                            environ deux heures, il donna le signal du retour.
+                            <br>
+                            L’instinct de Top ne fut pas inutile aux
+                            chasseurs, qui, grâce à l’intelligent animal, purent
+                            retrouver le chemin déjà parcouru. Une demiheure après, ils arrivaient au coude de la rivière.
+                            <br>
+                            Ainsi qu’il l’avait fait la première fois,
+                            Pencroff établit rapidement un train de bois, bien
+                            que, faute de feu, cela lui semblât une besogne
+                            inutile, et, le train suivant le fil de l’eau, on revint
+                            vers les Cheminées.
+                            <br>
+                            Mais, le marin n’en était pas à cinquante pas
+                            qu’il s’arrêtait, poussait de nouveau un hurrah
+                            formidable, et, tendant la main vers l’angle de la
+                            falaise :
+                            <br>
+                            « Harbert ! Nab ! Voyez ! » s’écriait-il.
+                            <br>
+                            Une fumée s’échappait et tourbillonnait audessus des roches !
+
+                        </p>
+                        <br>
+                        <hr/>
+                    </div>
+                    <div class="detail-box">
+                        <h1>The Mysterious Island</h1>
+                        <h5>~Jules Verne~</h5>
+                        <br>
+                        <p>In a few words, Gideon Spilett, Herbert, and Neb were made acquainted with what had happened.
+                            This accident, which appeared so very serious to Pencroft, produced different
+                            effects on the companions of the honest sailor.
+                            <br>
+                            Neb, in his delight at having found his master, did not listen,
+                            or rather, did not care to trouble himself with what Pencroft was saying.
+                            <br>
+                            Herbert shared in some degree the sailor's feelings.
+                            <br>
+                            As to the reporter, he simply replied,--
+                            <br>
+                            "Upon my word, Pencroft, it's perfectly indifferent to me!"
+                            <br>
+                            "But, I repeat, that we haven't any fire!"
+                            <br>
+                            "Pooh!"
+                            <br>
+                            "Nor any means of relighting it!"
+                            <br>
+                            "Nonsense!"
+                            <br>
+                            "But I say, Mr. Spilett--"
+                            <br>
+                            "Isn't Cyrus here?" replied the reporter.
+                            <br>
+                            "Is not our engineer alive? He will soon find some way of making fire for us!"
+                            <br>
+                            "With what?"
+                            <br>
+                            "With nothing."
+                            <br>
+                            What had Pencroft to say? He could say nothing, for,
+                            in the bottom of his heart he shared the confidence which
+                            his companions had in Cyrus Harding. The engineer was to
+                            them a microcosm, a compound of every science, a possessor
+                            of all human knowledge. It was better to be with Cyrus in a
+                            desert island, than without him in the most flourishing town
+                            in the United States. With him they could want nothing; with
+                            him they would never despair. If these brave men had been told
+                            that a volcanic eruption would destroy the land, that this land
+                            would be engulfed in the depths of the Pacific, they would have
+                            imperturbably replied,--
+                            <br>
+                            Cyrus is here!"
+                            <br>
+                            While in the palanquin, however, the engineer had again relapsed
+                            into unconsciousness, which the jolting to which he had been subjected
+                            during his journey had brought on, so that they could not now appeal to
+                            his ingenuity. The supper must necessarily be very meager. In fact, all
+                            the grouse flesh had been consumed, and there no longer existed any means
+                            of cooking more game. Besides, the couroucous which had been reserved had
+                            disappeared. They must consider what was to be done.
+                            <br>
+                            First of all, Cyrus Harding was carried into the central passage.
+                            There they managed to arrange for him a couch of sea-weed which still
+                            remained almost dry. The deep sleep which had overpowered him would no
+                            doubt be more beneficial to him than any nourishment.
+                            <br>
+                            Night had closed in, and the temperature, which had modified
+                            when the wind shifted to the northwest, again became extremely cold.
+                            Also, the sea having destroyed the partitions which Pencroft had
+                            put up in certain places in the passages, the Chimneys, on account
+                            of the draughts, had become scarcely habitable. The engineer's condition
+                            would, therefore, have been bad enough, if his companions had not carefully
+                            covered him with their coats and waistcoats.
+                            <br>
+                            Supper, this evening, was of course composed of the inevitable lithodomes,
+                            of which Herbert and Neb picked up a plentiful supply on the beach. However,
+                            to these molluscs, the lad added some edible sea-weed, which he gathered on
+                            high rocks, whose sides were only washed by the sea at the time of high tides. This sea-weed, which belongs to the order of Fucacae, of the genus Sargassum, produces, when dry, a gelatinous matter, rich and nutritious. The reporter and his companions, after having eaten a quantity of lithodomes, sucked the sargassum, of which the taste was very tolerable. It is used in parts of the East very considerably by the natives. "Never mind!" said the sailor, "the captain will help us soon." Meanwhile the cold became very severe, and unhappily they had no means of defending themselves from it.
+                            <br>
+                            The sailor, extremely vexed, tried in all sorts of ways to procure fire.
+                            Neb helped him in this work. He found some dry moss, and by striking
+                            together two pebbles he obtained some sparks, but the moss, not being
+                            inflammable enough, did not take fire, for the sparks were really only
+                            incandescent, and not at all of the same consistency as those which are
+                            emitted from flint when struck in the same manner. The experiment,
+                            therefore, did not succeed.
+                            <br>
+                            Pencroft, although he had no confidence in the proceeding, then
+                            tried rubbing two pieces of dry wood together, as savages do.
+                            Certainly, the movement which he and Neb exhibited, if it had
+                            been transformed into heat, according to the new theory, would
+                            have been enough to heat the boiler of a steamer! It came to
+                            nothing. The bits of wood became hot, to be sure, but much less
+                            so than the operators themselves.
+                            <br>
+                            After working an hour, Pencroft, who was in a complete state of
+                            perspiration, threw down the pieces of wood in disgust.
+                            <br>
+                            "I can never be made to believe that savages light their fires
+                            in this way, let them say what they will," he exclaimed. "I could
+                            sooner light my arms by rubbing them against each other!"
+                            <br>
+                            The sailor was wrong to despise the proceeding. Savages often
+                            kindle wood by means of rapid rubbing. But every sort of wood
+                            does not answer for the purpose, and besides, there is "the knack,"
+                            following the usual expression, and it is probable that Pencroft had
+                            not "the knack."
+                            <br>
+                            Pencroft's ill humor did not last long. Herbert had taken the
+                            bits of wood which he had turned down, and was exerting himself
+                            to rub them. The hardy sailor could not restrain a burst of laughter
+                            on seeing the efforts of the lad to succeed where he had failed.
+                            <br>
+                            "Rub, my boy, rub!" said he.
+                            <br>
+                            "I am rubbing," replied Herbert, laughing, "but I don't pretend
+                            to do anything else but warm myself instead of shivering, and soon
+                            I shall be as hot as you are, my good Pencroft!"
+                            <br>
+                            This soon happened. However, they were obliged to give up,
+                            for this night at least, the attempt to procure fire. Gideon
+                            Spilett repeated, for the twentieth time, that Cyrus Harding
+                            would not have been troubled for so small a difficulty. And,
+                            in the meantime, he stretched himself in one of the passages
+                            on his bed of sand. Herbert, Neb, and Pencroft did the same,
+                            while Top slept at his master's feet.
+                            <br>
+                            Next day, the 28th of March, when the engineer awoke, about
+                            eight in the morning, he saw his companions around him watching
+                            his sleep, and, as on the day before, his first words were:--
+                            <br>
+                            "Island or continent?" This was his uppermost thought.
+                            <br>
+                            "Well!" replied Pencroft, "we don't know anything about it, captain!"
+                            <br>
+                            "You don't know yet?"
+                            <br>
+                            "But we shall know," rejoined Pencroft, "when you have
+                            guided us into the country."
+                            <br>
+                            "I think I am able to try it," replied the engineer,
+                            who, without much effort, rose and stood upright.
+                            <br>
+                            "That's capital!" cried the sailor.
+                            <br>
+                            "I feel dreadfully weak," replied Harding. "Give me
+                            something to eat, my friends, and it will soon go off.
+                            You have fire, haven't you?"
+                            <br>
+                            This question was not immediately replied to. But, in a few seconds--
+                            <br>
+                            "Alas! we have no fire," said Pencroft, "or rather,
+                            captain, we have it no longer!"
+                            <br>
+                            And the sailor recounted all that had passed the day
+                            before. He amused the engineer by the history of the
+                            single match, then his abortive attempt to procure fire
+                            in the savages' way.
+                            <br>
+                            "We shall consider," replied the engineer, "and if we
+                            do not find some substance similar to tinder--"
+                            <br>
+                            "Well?" asked the sailor.
+                            <br>
+                            "Well, we will make matches.
+                            <br>
+                            "Chemicals?"
+                            <br>
+                            "Chemicals!"
+                            <br>
+                            "It is not more difficult than that," cried the
+                            reporter, striking the sailor on the shoulder.
+                            <br>
+                            The latter did not think it so simple, but he did
+                            not protest. All went out. The weather had become
+                            very fine. The sun was rising from the sea's horizon,
+                            and touched with golden spangles the prismatic rugosities
+                            of the huge precipice.
+                            <br>
+                            Having thrown a rapid glance around him, the engineer
+                            seated himself on a block of stone. Herbert offered
+                            him a few handfuls of shell-fish and sargassum, saying,--
+                            <br>
+                            "It is all that we have, Captain Harding."
+                            <br>
+                            "Thanks, my boy," replied Harding; "it will do--for
+                            this morning at least."
+                            <br>
+                            He ate the wretched food with appetite, and washed it
+                            down with a little fresh water, drawn from the river
+                            in an immense shell.
+                            <br>
+                            His companions looked at him without speaking. Then,
+                            feeling somewhat refreshed, Cyrus Harding crossed his arms, and said,--
+                            <br>
+                            "So, my friends, you do not know yet whether fate
+                            has thrown us on an island, or on a continent?"
+                            <br>
+                            "No, captain," replied the boy.
+                            <br>
+                            "We shall know to-morrow," said the engineer;
+                            "till then, there is nothing to be done."
+                            <br>
+                            "Yes," replied Pencroft.
+                            <br>
+                            "What?"
+                            <br>
+                            "Fire," said the sailor, who, also, had a fixed idea.
+                            <br>
+                            "We will make it, Pencroft," replied Harding.
+                            <br>
+                            "While you were carrying me yesterday, did I
+                            not see in the west a mountain which commands the country?"
+                            <br>
+                            "Yes," replied Spilett, "a mountain which must be rather high--"
+                            <br>
+                            "Well," replied the engineer, "we will climb to
+                            the summit to-morrow, and then we shall see if
+                            this land is an island or a continent. Till then,
+                            I repeat, there is nothing to be done."
+                            <br>
+                            "Yes, fire!" said the obstinate sailor again.
+                            <br>
+                            "But he will make us a fire!" replied Gideon Spilett,
+                            "only have a little patience, Pencroft!"
+                            <br>
+                            The seaman looked at Spilett in a way which seemed
+                            to say, "If it depended upon you to do it, we wouldn't
+                            taste roast meat very soon"; but he was silent.
+                            <br>
+                            Meanwhile Captain Harding had made no reply. He
+                            appeared to be very little troubled by the question
+                            of fire. For a few minutes he remained absorbed in
+                            thought; then again speaking,--
+                            <br>
+                            "My friends," said he, "our situation is, perhaps,
+                            deplorable; but, at any rate, it is very plain.
+                            Either we are on a continent, and then, at the expense
+                            of greater or less fatigue, we shall reach some inhabited
+                            place, or we are on an island. In the latter case, if the
+                            island is inhabited, we will try to get out of the scrape
+                            with the help of its inhabitants; if it is desert, we will
+                            try to get out of the scrape by ourselves."
+                            <br>
+                            "Certainly, nothing could be plainer," replied Pencroft.
+                            <br>
+                            "But, whether it is an island or a continent,"
+                            asked Gideon Spilett, "whereabouts do you think,
+                            Cyrus, this storm has thrown us?"
+                            <br>
+                            "I cannot say exactly," replied the engineer,
+                            "but I presume it is some land in the Pacific.
+                            In fact, when we left Richmond, the wind was
+                            blowing from the northeast, and its very violence
+                            greatly proves that it could not have varied. If
+                            the direction has been maintained from the northeast
+                            to the southwest, we have traversed the States of North
+                            Carolina, of South Carolina, of Georgia, the Gulf of Mexico,
+                            Mexico, itself, in its narrow part, then a part of the Pacific
+                            Ocean. I cannot estimate the distance traversed by the
+                            balloon at less than six to seven thousand miles, and,
+                            even supposing that the wind had varied half a quarter,
+                            it must have brought us either to the archipelago of
+                            Mendava, either on the Pomotous, or even, if it had a
+                            greater strength than I suppose, to the land of New
+                            Zealand. If the last hypothesis is correct, it will
+                            be easy enough to get home again. English or Maoris,
+                            we shall always find some one to whom we can speak.
+                            If, on the contrary, this is the coast of a
+                            desert island in some tiny archipelago,
+                            perhaps we shall be able to reconnoiter
+                            it from the summit of that peak which overlooks the country,
+                            and then we shall see how best to establish ourselves here as
+                            if we are never to go away."
+                            <br>
+                            "Never?" cried the reporter. "You say 'Never,' my dear Cyrus?"
+                            <br>
+                            "Better to put things at the worst at first," replied
+                            the engineer, "and reserve the best for a surprise."
+                            <br>
+                            "Well said," remarked Pencroft. "It is to be hoped,
+                            too, that this island, if it be one, is not situated
+                            just out of the course of ships; that would be really unlucky!"
+                            <br>
+                            "We shall not know what we have to rely on until we
+                            have first made the ascent of the mountain," replied the engineer.
+                            <br>
+                            "But to-morrow, captain," asked Herbert, "shall you
+                            be in a state to bear the fatigue of the ascent?"
+                            <br>
+                            "I hope so," replied the engineer, "provided you and
+                            Pencroft, my boy, show yourselves quick and clever hunters."
+                            <br>
+                            "Captain," said the sailor, "since you are speaking
+                            of game, if on my return, I was as certain of roasting
+                            it as I am of bringing it back--"
+                            <br>
+                            "Bring it back all the same, Pencroft," replied Harding.
+                            <br>
+                            It was then agreed that the engineer and the reporter
+                            were to pass the day at the Chimneys, so as to examine
+                            the shore and the upper plateau. Neb, Herbert, and the
+                            sailor were to return to the forest, renew their store
+                            of wood, and lay violent hands on every creature, feathered
+                            or hairy, which might come within their reach.
+                            <br>
+                            They set out accordingly about ten o'clock in the morning,
+                            Herbert confident, Neb joyous, Pencroft murmuring aside,--
+                            <br>
+                            "If, on my return, I find a fire at the house, I shall
+                            believe that the thunder itself came to light it." All
+                            three climbed the bank; and arrived at the angle made
+                            by the river, the sailor, stopping, said to his two companions,--
+                            <br>
+                            "Shall we begin by being hunters or wood-men?"
+                            <br>
+                            "Hunters," replied Herbert. "There is Top already in quest."
+                            <br>
+                            "We will hunt, then," said the sailor, "and afterwards
+                            we can come back and collect our wood."
+                            <br>
+                            This agreed to, Herbert, Neb, and Pencroft, after having
+                            torn three sticks from the trunk of a young fir, followed
+                            Top, who was bounding about among the long grass.
+                            <br>
+                            This time, the hunters, instead of following the course
+                            of the river, plunged straight into the heart of the
+                            forest. There were still the same trees, belonging,
+                            for the most part, to the pine family. In certain places,
+                            less crowded, growing in clumps, these pines exhibited
+                            considerable dimensions, and appeared to indicate, by
+                            their development, that the country was situated in a
+                            higher latitude than the engineer had supposed. Glades,
+                            bristling with stumps worn away by time, were covered
+                            with dry wood, which formed an inexhaustible store of
+                            fuel. Then, the glade passed, the underwood thickened
+                            again, and became almost impenetrable.
+                            <br>
+                            It was difficult enough to find the way among the groups
+                            of trees, without any beaten track. So the sailor from
+                            time to time broke off branches which might be easily
+                            recognized. But, perhaps, he was wrong not to follow
+                            the watercourse, as he and Herbert had done on their
+                            first excursion, for after walking an hour not a creature
+                            had shown itself. Top, running under the branches, only
+                            roused birds which could not be approached. Even the
+                            couroucous were invisible, and it was probable that the
+                            sailor would be obliged to return to the marshy part of
+                            the forest, in which he had so happily performed his grouse fishing.
+                            <br>
+                            "Well, Pencroft," said Neb, in a slightly sarcastic tone,
+                            "if this is all the game which you promised to bring back
+                            to my master, it won't need a large fire to roast it!"
+                            <br>
+                            "Have patience," replied the sailor, "it isn't the game
+                            which will be wanting on our return."
+                            <br>
+                            "Have you not confidence in Captain Harding?"
+                            <br>
+                            "Yes."
+                            <br>
+                            "But you don't believe that he will make fire?"
+                            <br>
+                            "I shall believe it when the wood is blazing in the fireplace."
+                            <br>
+                            "It will blaze, since my master has said so."
+                            <br>
+                            "We shall see!"
+                            <br>
+                            Meanwhile, the sun had not reached the highest point
+                            in its course above the horizon. The exploration,
+                            therefore, continued, and was usefully marked by a
+                            discovery which Herbert made of a tree whose fruit was
+                            edible. This was the stone-pine, which produces an excellent
+                            almond, very much esteemed in the temperate regions of America
+                            and Europe. These almonds were in a perfect state of maturity,
+                            and Herbert described them to his companions, who feasted on them.
+                            <br>
+                            "Come," said Pencroft, "sea-weed by way of bread, raw mussels
+                            for meat, and almonds for dessert, that's certainly a good
+                            dinner for those who have not a single match in their pocket!"
+                            <br>
+                            We mustn't complain," said Herbert.
+                            <br>
+                            "I am not complaining, my boy," replied Pencroft, "only I
+                            repeat, that meat is a little too much economized in this sort of meal."
+                            <br>
+                            "Top has found something!" cried Neb, who ran towards
+                            a thicket, in the midst of which the dog had disappeared,
+                            barking. With Top's barking were mingled curious gruntings.
+                            <br>
+                            The sailor and Herbert had followed Neb. If there was
+                            game there this was not the time to discuss how it was
+                            to be cooked, but rather, how they were to get hold of it.
+                            <br>
+                            The hunters had scarcely entered the bushes when they
+                            saw Top engaged in a struggle with an animal which he
+                            was holding by the ear. This quadruped was a sort of
+                            pig nearly two feet and a half long, of a blackish
+                            brown color, lighter below, having hard scanty hair;
+                            its toes, then strongly fixed in the ground, seemed
+                            to be united by a membrane. Herbert recognized in
+                            this animal the capybara, that is to say, one of the
+                            largest members of the rodent order.
+                            <br>
+                            Meanwhile, the capybara did not struggle against the dog.
+                            It stupidly rolled its eyes, deeply buried in a thick bed
+                            of fat. Perhaps it saw men for the first time.
+                            <br>
+                            However, Neb having tightened his grasp on his stick,
+                            was just going to fell the pig, when the latter,
+                            tearing itself from Top's teeth, by which it was only held
+                            by the tip of its ear, uttered a vigorous grunt, rushed
+                            upon Herbert, almost overthrew him, and disappeared in the wood.
+                            <br>
+                            "The rascal!" cried Pencroft.
+                            <br>
+                            All three directly darted after Top, but at the moment
+                            when they joined him the animal had disappeared under
+                            the waters of a large pond shaded by venerable pines.
+                            <br>
+                            Neb, Herbert, and Pencroft stopped, motionless. Top
+                            plunged into the water, but the capybara, hidden at
+                            the bottom of the pond, did not appear.
+                            <br>
+                            "Let us wait," said the boy, "for he will soon come
+                            to the surface to breathe."
+                            <br>
+                            "Won't he drown?" asked Neb.
+                            <br>
+                            "No," replied Herbert, "since he has webbed feet, and
+                            is almost an amphibious animal. But watch him."
+                            <br>
+                            Top remained in the water. Pencroft and his two
+                            companions went to different parts of the bank,
+                            so as to cut off the retreat of the capybara,
+                            which the dog was looking for beneath the water.
+                            <br>
+                            Herbert was not mistaken. In a few minutes the
+                            animal appeared on the surface of the water.
+                            Top was upon it in a bound, and kept it from plunging
+                            again. An instant later the capybara, dragged to the bank,
+                            was killed by a blow from Neb's stick.
+                            <br>
+                            "Hurrah!" cried Pencroft, who was always ready with this
+                            cry of triumph.
+                            <br>
+                            "Give me but a good fire, and this pig shall be gnawed
+                            to the bones!"
+                            <br>
+                            Pencroft hoisted the capybara on his shoulders, and
+                            judging by the height of the sun that it was about two
+                            o'clock, he gave the signal to return.
+                            <br>
+                            Top's instinct was useful to the hunters, who, thanks
+                            to the intelligent animal, were enabled to discover
+                            the road by which they had come. Half an hour later they
+                            arrived at the river.
+                            <br>
+                            Pencroft soon made a raft of wood, as he had done before,
+                            though if there was no fire it would be a useless task, and the
+                            raft following the current, they returned towards the Chimneys.
+                            <br>
+                            But the sailor had not gone fifty paces when he stopped, and
+                            again uttering a tremendous hurrah, pointed towards the angle
+                            of the cliff,--
+                            <br>
+                            "Herbert! Neb! Look!" he shouted.
+                            <br>
+                            Smoke was escaping and curling up among the rocks.
+                            <br>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

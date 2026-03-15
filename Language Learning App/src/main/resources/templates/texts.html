@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/texts.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+                <a th:if="${isAdmin}" href="/admin-page">My Page</a>
+                <a th:if="${isUser}" href="/user-page">My Page</a>
+                <a href="/french">Learn French</a>
+                <a href="/forum">Forum</a>
+                <a href="/logout" >Logout</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="main_section position-relative">
+    <div class="main_bg_box">
+        <img src="/images/texts.jpg" alt="">
+    </div>
+    <div class="main_bg"></div>
+    <div class="container">
+        <div class="col-md-12 ml-auto">
+            <div class="detail-box">
+                <h1>Start reading</h1>
+                <p>Texts in both English and French...</p>
+
+                <p>You can take a quiz to learn your level...</p>
+                <a href="/quiz" class="button">QUIZ</a>
+                <p>... or try your luck:</p>
+                <a href="/textslvl1" class="button">Beginner</a>
+                <a href="/textslvl2" class="button">Intermediate</a>
+                <a href="/textslvl3" class="button">Advanced</a>
+                <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+                <div id="chatWindowcontainer" class="window-container" style="display: none;">
+                    <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function toggleChatWindow() {
+        var chatWindow = document.getElementById('chatWindowcontainer');
+        chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

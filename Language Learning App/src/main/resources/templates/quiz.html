@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/quiz.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+                <a href="/french">Learn French</a>
+                <a href="/logout" >Logout</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+
+<section class="quiz_section layout_padding">
+    <div class="quiz_bg_box">
+        <img src="/images/login.jpg" alt="">
+    </div>
+    <div class="slider_bg"></div>
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2 id="title">Take the quiz to know your level:</h2>
+        </div>
+        <div class="">
+            <div class="row">
+                <div class="col-md-7 mx-auto">
+                    <div class="quiz_form-container">
+
+                        <div id="question-title">question title</div><hr>
+                        <div id="option-list"></div>
+                        <div class="score" id="score-area">score area</div>
+                        <a class="btn">
+
+                            <button id="start">Start</button>
+                            <button id="submit">Submit</button>
+                            <form id="quizForm" action="/quiz" method="post">
+                                <input type="hidden" id="quiz_id" name="quiz_id" value="0" >
+                                <input type="hidden" id="grade" name="grade" value="0" >
+                                <button id="submitQuiz">Submit Quiz</button>
+                            </form>
+                            <button href="/texts" id="lvl1">Start Reading</button>
+                            <button href="/texts" id="lvl2">Start Reading</button>
+                            <button href="/texts" id="lvl3">Start Reading</button>
+
+                            <button id="play-again">Try Again</button>
+
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script >
+        var data = [
+            {
+                "qs": "1. Marguerite est _________ au restaurant.",
+                "options": ["serveur", "serveuse", "service", "sert"],
+                "answerId": 1
+            },
+            {
+                "qs": "2. Est-ce que tu vois _________ voiture noire ?",
+                "options": ["du", "de", "la", "l’"],
+                "answerId": 2
+            },
+            {
+                "qs": "3. Je te présente ________ frère et ________ amie.",
+                "options": ["mon / sa", " ton / t'","mon / ma" , "mon / son"],
+                "answerId": 3
+            },
+            {
+                "qs": "4. Nous aimons visiter les monuments. Nous allons _________ cathédrale",
+                "options": ["à la", "au", "à l' ", "aux"],
+                "answerId": 0
+            },
+            {
+                "qs": "5. Le restaurant se trouve près ___________ hôtel.",
+                "options": ["de la ", "du ", "de l' ", "des"],
+                "answerId": 2
+            },
+            {
+                "qs": "6. ___________ ton numéro de téléphone ?",
+                "options": [" Il y a", "Quelle est", "Quel est", "Quels sont"],
+                "answerId": 1
+            },
+            {
+                "qs": "7. Il s'est acheté un dico parce qu'il n' _________ avait pas.",
+                "options": ["en", "au", "y", "des"],
+                "answerId": 0
+            },
+            {
+                "qs": "8. Suzanne ne m'accompagnera pas en Italie, elle _________ est déjà allée cinq fois.",
+                "options": ["y a ", "a l' ", "y", "en"],
+                "answerId": 2
+            },
+            {
+                "qs": "9. Il est professeur.__________ est un grand scientifique.",
+                "options": ["-ci", "celui-ci", "ça", "c'"],
+                "answerId": 3
+            },
+            {
+                "qs": "10. __________ animal sauvage me fait peur.",
+                "options": ["Cette", "Celle", "Cet", "Cela"],
+                "answerId": 2
+            }
+        ];
+
+        let questionNo = 0;
+        let score = 0;
+        let question_title = document.getElementById('question-title');
+        let option_list = document.getElementById('option-list');
+        let score_area = document.getElementById('score-area');
+        let btn_submit = document.getElementById('submit');
+        let submitQuiz = document.getElementById('submitQuiz');
+        let start = document.getElementById('start');
+        let play_again = document.getElementById('play-again');
+        let lvl1 = document.getElementById('lvl1');
+        let lvl2 = document.getElementById('lvl2');
+        let lvl3 = document.getElementById('lvl3');
+
+
+        hideItems('question-title');
+        hideItems('option-list');
+        hideItems('score-area');
+        hideItems('submit');
+        hideItems('submitQuiz');
+        hideItems('play-again');
+        hideItems('lvl1');
+        hideItems('lvl2');
+        hideItems('lvl3');
+
+
+        start.addEventListener('click', function () {
+            show('question-title');
+            show('option-list');
+            show('submit');
+            loadQuestions();
+            hideItems('start');
+        });
+
+        function loadQuestions() {
+            if (questionNo < data.length) {
+                if(questionNo == data.length-1)
+                {
+                    hideItems("submit");
+                    show("submitQuiz");
+                }
+
+                let q = data[questionNo].qs;
+                let optionsArray = data[questionNo].options;
+
+                question_title.innerText = q;
+
+                option_list.innerText = "";
+                for (let i = 0; i < optionsArray.length; i++) {
+                    option_list.innerHTML += `
+                <input type="radio" id="${i}" name="${question_title}" class="custom-radio"/>${optionsArray[i]}<br>
+            `;
+                }
+            } else {
+                console.log("no more q");
+                //show('score-area');
+
+                if(score < 5)  {
+
+                    score_area.innerText = "Your score is: " + score + "." + " Based on your knowledge, I recommend you to read this: " ;
+                    //show('lvl1');
+                }
+                else if(4 < score < 9)  {
+                    score_area.innerText = "Your score is: " + score + "." + " Based on your knowledge, I recommend you to read this: " ;
+
+                    //show('lvl2');
+                }
+                else if(8< score < 11)  {
+                    score_area.innerText = "Your score is: " + score + "." + " Based on your knowledge, I recommend you to read this: " ;
+
+                    // show('lvl3');
+                }
+
+                hideItems('submit');
+                hideItems('submitQuiz');
+                hideItems('question-title');
+                hideItems('option-list');
+                hideItems('title');
+                //show('play-again');
+            }
+        }
+
+        function submitQuizData() {
+
+            document.getElementById('quiz_id').value = 5;
+            console.log(score);
+            document.getElementById('grade').value = score;
+            document.getElementById('quizForm').submit();
+        }
+
+
+        submitQuiz.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions();
+            console.log(score);
+
+            submitQuizData();
+
+        });
+
+
+        play_again.addEventListener('click', function () {
+            location.reload();
+        });
+
+        lvl1.addEventListener('click', function () {
+            window.location.href = '/textslvl1';
+        })
+        lvl2.addEventListener('click', function () {
+            window.location.href = '/textslvl2';
+        })
+        lvl3.addEventListener('click', function () {
+            window.location.href = '/textslvl3';
+        })
+
+
+        btn_submit.addEventListener('click', function () {
+            let id = getCheckedId();
+            try {
+                if (id == data[questionNo].answerId) {
+                    score++;
+                    console.log("correct answer");
+                }
+            } catch (error) {
+
+            }
+            questionNo++;
+            loadQuestions();
+        });
+
+        function getCheckedId() {
+            for (let i = 0; i < 4; i++) {
+                if (document.getElementById(i).checked) {
+                    console.log("you selected:" + i);
+                    return i;
+                }
+            }
+        }
+
+        function hideItems(elementId) {
+            let element = document.getElementById(elementId);
+            if (element) {
+                element.style.display = "none";
+            } else {
+                console.error(`Element with ID '${elementId}' not found.`);
+            }
+        }
+
+        function show(elementId) {
+            let element = document.getElementById(elementId);
+            if (element) {
+                element.style.display = "block";
+            } else {
+                console.error(`Element with ID '${elementId}' not found.`);
+            }
+        }
+
+    </script>
+</section>
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

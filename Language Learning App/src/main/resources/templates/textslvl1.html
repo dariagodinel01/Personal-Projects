@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/texts.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+                <a th:if="${isAdmin}" href="/admin-page">My Page</a>
+                <a th:if="${isUser}" href="/user-page">My Page</a>
+                <a href="/french">Learn French</a>
+                <a href="/forum">Forum</a>
+                <a href="/logout" >Logout</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="main_section position-relative">
+    <div class="main_bg_box">
+        <img src="/images/texts.jpg" alt="">
+    </div>
+    <div class="main_bg"></div>
+    <div class="container">
+        <div class="col-md-12 ml-auto">
+            <div class="detail-box">
+                <h1>Beginner</h1>
+                <p>Texts in both English and French for beginner level.
+
+                </p>
+                <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top">Top</button>
+
+                <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+                <div id="chatWindowcontainer" class="window-container" style="display: none;">
+                    <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const popups = document.querySelectorAll(".popup");
+        popups.forEach(function (popup) {
+            const translation = popup.getAttribute("data-translate");
+            const popuptext = popup.querySelector(".popuptext");
+            popuptext.innerHTML = translation;
+        });
+    });
+    function toggleChatWindow() {
+        var chatWindow = document.getElementById('chatWindowcontainer');
+        chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+    }
+
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("back-to-top-btn").style.display = "block";
+        } else {
+            document.getElementById("back-to-top-btn").style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+</script>
+
+<section class="second_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-12">
+                <div class="detail_container">
+                    <div class="detail-box">
+
+                        <a href="/quiz">Retake the quiz?</a>
+                        <br>
+                        <h1><span class="popup" data-translate="Little Red Riding Hood">Petit Chaperon Rouge<span class="popuptext">Little Red Riding Hood</span></span></h1>
+                        <br>
+                        <p>Il était une fois, au milieu d'une forêt <span class="popup" data-translate="dense"><b>épaisse</b><span class="popuptext">dense</span></span>, une petite maison
+                            où habitait une jolie petite fille nommée Petit Chaperon Rouge.
+                            Un jour <span class="popup" data-translate="sunny"><b>ensoleillé</b><span class="popuptext">sunny</span></span>
+                            , sa maman l'appela dans la cuisine de leur petite maison.
+
+                            <br>
+                            "Mère-grand est malade", dit-elle. "Apporte-lui ce <span class="popup" data-translate="basket of cakes"><b>panier de gâteaux</b><span class="popuptext">basket of cakes</span></span>
+                            , mais sois très prudente! Reste sur le chemin a travers
+                            la forêt et ne t'arrête pas! Si tu marches rapidement, il ne
+                            t'arrivera aucun mal."
+
+                            <br>
+                            "Ne t'inquiète pas", dit-elle, "je courrai jusque chez
+                            Grand'mère sans m'arrêter." Petit Chaperon Rouge embrassa
+                            sa maman et s'en alla. La petite fille commença son long
+                            voyage a travers la forêt.
+
+                            <br>
+                            ...Mais elle <span class="popup" data-translate="forgot"><b>oublia</b><span class="popuptext">forgot</span></span>
+                            bien vite les sages paroles de sa mère.
+                            <br>
+                            Elle vit un massif de <span class="popup" data-translate="strawberries "><b>fraises</b><span class="popuptext">strawberries</span></span>
+                            sous un arbre. "Quelles
+                            jolies fraises!" exclama-t-elle, déposant son panier sur
+                            le sol. "Elles sont <span class="popup" data-translate="so nice and ripe"><b>si chouettes, et mûres,</b><span class="popuptext">so nice and ripe</span></span>
+                            et si grosses!
+                            Delicieux! Je vais peut-être juste en prendre une de plus..."
+
+                            <br>
+                            Soudain, Petit Chaperon Rouge se souvint de sa maman, de sa
+                            promesse, de sa grand'mère et du panier... Elle se dépêcha
+                            de retourner vers le chemin.
+
+                            <br>
+                            La forêt devint de plus en plus dense. <span class="popup" data-translate="A yellow butterfly"><b>Un papillon jaune</b><span class="popuptext">A yellow butterfly</span></span>
+                            vola vers elle à travers les arbres. "Oh, comme il est beau!"
+                            esclama-t-elle, et elle suivit le papillon à travers les arbres.
+                            "Je t'attrapperai!"
+
+                            <br>
+                            Puis, elle vit quelques grandes marguerites dans l'herbe.
+                            "Oh, comme elles sont belles!" exclama-t-elle, "Grand'mère
+                            va les adorer!", et elle cueillit une grande botte de fleurs.
+
+                            <br>
+                            Au même instant, deux yeux menaçants la regardaient de
+                            derrière un arbre. Un bruit étrange dans la forêt fit bondir
+                            de frayeur Petit Chaperon Rouge, et son coeur se mit a battre.
+                            "Je dois trouver le chemin et m'enfuir d'ici! Rapidement!"
+
+                            <br>
+                            Petit Chaperon Rouge <span class="popup" data-translate="ran and ran"><b>courut et courut</b><span class="popuptext">ran and ran</span></span>
+                            , et retrouva enfin le
+                            chemin. Mais alors qu'elle commençait a se relaxer, elle
+                            entendit un autre bruit étrange derrière elle...
+                            <br>
+                            ... Une très grosse voix lui dit: "Bonjour, petite fille...
+                            Pourquoi marches-tu dans la forêt toute seule? Où vas-tu?"
+
+                            <br>
+                            "J'apporte quelques gâteaux à ma grand'mere. Elle vit au
+                            bout de ce chemin," dit Petit Chaperon Rouge avec une toute petite voix.
+
+                            <br>
+                            "Est-ce que ta grand mère vit seule?" demanda le loup (car
+                            c'était le grand méchant loup, à qui elle parlait).
+                            <br>
+                            "Oh oui", répondit-elle. "Et elle n'ouvre jamais la porte
+                            aux étrangers!"
+
+                            <br>
+                            "Tu as une grand'mère très <span class="popup" data-translate="clever "><b>maline</b><span class="popuptext">To</span></span>
+                            ," répondit le loup.
+                            "Bien, c'était très chouette de te parler. Peut-être nous
+                            rencontrerons-nous encore!"
+                            <br>
+                            Le loup s'en alla, pensant: "Hmm, je vais d'abord manger
+                            la grand'mère, et j'attendrai que la petite fille arrive!"
+
+                            <br>
+                            Le loup arriva au bout du chemin où se tenait la petite
+                            maison. Toc! Toc! Le loup frappa à la porte.
+
+                            <br>
+                            "Qui est là?" appela Grand'Mère depuis son lit.
+                            <br>
+                            "C'est moi, Petit Chaperon Rouge. Je t'ai apporté des gâteaux
+                            parce que tu es malade," répondit le loup, essayant de cacher
+                            au mieux sa grosse voix de loup.
+
+                            <br>
+                            "Oh, c'est merveilleux!" dit Grand'Mère. Elle ne remarqua
+                            rien d'étrange. "Entre!"
+
+                            <br>
+                            Pauvre Grand'Mère! En moins de deux secondes, le loup avait
+                            bondi à travers la chambre et avalé la vieille dame. Gloup!
+                            Puis, le loup enfila la robe et le chapeau de Grand'Mère et
+                            se glissa dans le lit.
+
+                            <br>
+                            Bientôt, Petit Chaperon Rouge frappa à la porte. "Grand'mère,
+                            c'est moi. Puis-je entrer?"
+                            <br>
+                            Le loup essaya d'imiter la petite voix de Grand'Mère et
+                            répondit: "Bonjour ma chérie! Entre!"
+
+                            <br>
+                            "Que tu as une grosse voix, Grand'Mère!" dit la petite fille, en surprise.
+                            <br>
+                            "C'est pour mieux te saluer , ma chérie," dit le loup.
+
+                            <br>
+                            "Et que tu as de grands yeux, Grand'Mère..."
+                            <br>
+                            "C'est pour mieux te voir, ma chérie!"
+
+                            <br>
+                            "Et que tu as de grandes mains!" exclama Petit Chaperon
+                            Rouge, s'approchant du lit.
+                            <br>
+                            "C'est pour mieux t'embrasser, ma chérie!" dit le loup.
+
+                            <br>
+                            "...Et que tu as une grande bouche," murmura la petite
+                            fille d'une voix faible.
+                            <br>
+                            "C'est pour mieux te MANGER!" grogna le loup, et il sauta
+                            hors du lit et l'avala à son tour. Puis, <span class="popup" data-translate="full stomach"><b>l'estomac plein</b><span class="popuptext">full stomach</span></span>
+                            , il s'endormit.
+
+                            <br>
+                            A ce moment, un chasseur sortit de la forêt. Il vit la
+                            maison et décida de s'arrêter et de demander un verre d'eau.
+                            Il <span class="popup" data-translate="was looking for"><b>cherchait</b><span class="popuptext">was looking for</span></span>
+                            un grand loup qui terrorisait le village.
+
+                            <br>
+                            Le chasseur entendit un sifflement étrange a l'intérieur de
+                            la maison. Il regarda à travers la fenêtre et vit le grand loup,
+                            ronflant sur le lit de Grand'Mère. "Le loup! Il ne m'échappera
+                            pas cette fois!" cria le chasseur.
+
+                            <br>
+                            Le <span class="popup" data-translate="hunter"><b>chasseur</b><span class="popuptext">hunter</span></span>
+                            ouvrit l'estomac du loup et, à sa surprise,
+                            sortirent Grand'Mère et Petit Chaperon Rouge, saines et sauves.
+                            "Oh, merci", dit la vieille dame.
+
+                            <br>
+                            "Rentrer a la maison est sûr, maintenant," dit le chasseur à
+                            Petit Chaperon Rouge. "Le grand méchant loup est mort, il n'y
+                            a plus aucun danger sur le chemin."
+
+                            <br>
+                            La maman de Petit Chaperon Rouge arriva à la maison de
+                            Grand'Mère alors que le soleil se couchait. Elle s'était
+                            beaucoup inquiêtée lorsque sa fille n'était pas rentrée à
+                            la maison. Quand elle vit Petit Chaperon Rouge, elle explosa
+                            en larmes de joie. "Oh, tu es sauve!"
+
+                            <br>
+                            Apres avoir remercié le chasseur a nouveau, Petit Chaperon
+                            Rouge et sa mère rentrèrent à la maison à travers la forêt.
+
+                            <br>
+                            Alors qu'elles marchaient rapidement sous les arbres, la petite
+                            fille dit à sa mère: "Nous devons toujours rester sur <span class="popup" data-translate="the path"><b>le chemin</b><span class="popuptext">the path</span></span>
+
+                            et ne jamais s'arrêter. Si nous faisons ça, nous resterons sauves!"
+                        </p>
+
+                        <br><br>
+                        <hr/>
+                    </div>
+                    <div class="detail-box">
+                        <h1>Little red riding hood</h1>
+                        <br>
+                        <p>Once upon a time, in the middle of a dense forest, there was a small house,
+                            where lived a pretty little girl named Little Red Riding Hood. One sunny
+                            day, her mother called her into the kitchen of their little house.
+                            <br>
+                            "Grandma is sick" she said. "Take her this basket of cakes, but be very
+                            careful! Stay on the path through the forest and don't stop! If you walk
+                            quickly, no harm will come to you."
+                            <br>
+                            "Don't worry", she said. "I will run to Grandma's without stopping."
+                            Little Red Riding Hood kissed her mother and left. The little girl
+                            started her long trip through the forest.
+                            <br>
+                            ...But she soon forgot the wise words of her mother.
+                            <br>
+                            She saw a patch of strawberries under a tree. "What lovely
+                            strawberries!" she exclaimed, laying her basket on the ground.
+                            "They are so nice and ripe... and so big! Delicious! I'll maybe just have one more..."
+                            <br>
+                            Suddenly Little Red Riding Hood remembered her mother, her promise,
+                            her grandmother, and the basket... She hurried back towards the path.
+                            <br>
+                            The wood became thicker and thicker. A yellow butterfly flew down
+                            through the trees. "Oh, how pretty!" she exclaimed, and she chased
+                            the butterfly through the trees. "I'll catch you!"
+                            <br>
+                            Then she saw some large daisies in the grass. "Oh, how beautiful!"
+                            she exclaimed. "Grandma will love them!" And she picked a huge bunch of flowers.
+                            <br>
+                            Meanwhile, two menacing eyes watched her from behind a tree. A strange
+                            noise in the woods made Little Red Riding Hood jump with fright, and
+                            her heart started to thump. "I must find the path and run away from here, quickly!"
+                            <br>
+                            Little Red Riding Hood ran and ran, and finally found the path. But
+                            as soon as she started to relax she heard another strange noise behind her...
+                            <br>
+                            ... A very big voice which said: "Hello, little girl. Why are you walking
+                            in the forest all alone? Where are you going?"
+                            <br>
+                            "I'm taking some cakes to my grandma. She lives at the end of this path,"
+                            said Little Riding Hood in a very small voice.
+                            <br>
+                            "Does your grandma live alone?" asked the wolf (for it was the Big Bad Wolf
+                            she was talking to!)
+                            <br>
+                            "Oh, yes," replied Little Red Riding Hood, "and she never opens the door to strangers!"
+                            <br>
+                            "You have a very clever grandma", answered the wolf. "Well, it was very
+                            nice talking to you. Maybe we'll meet again!"
+                            <br>
+                            The wolf left, thinking "Mmmmm, I will first eat the grandma, and
+                            then I will wait for the little girl to come."
+                            <br>
+                            The wolf arrived at the end of the path, where the little house
+                            stood. Knock! Knock! The wolf knocked on the door.
+                            <br>
+                            "Who's there?" called Grandma from her bed.
+                            <br>
+                            "It's me, Little Red Riding Hood. I have brought you some cakes
+                            because you are sick," answered the wolf, trying his best to hide his big wolf voice.
+                            <br>
+                            "Oh, that's marvellous!" said Grandma. She didn't notice
+                            anything strange. "Come in!"
+                            <br>
+                            Poor Grandma! In less than two seconds the wolf had jumped
+                            across the room and swallowed the old lady. Gulp! Then, the
+                            wolf put on grandma's dress and hat, and slid into the bed.
+                            <br>
+                            Soon, Little Red Riding Hood knocked on the door. "Grandma,
+                            it's me. May I come in?"
+
+                            <br>
+                            The wolf tried to imitate Grandma's small voice, and
+                            answered "Hello my dear! Come in!"
+                            <br>
+                            "What a big voice you have, Grandma!" said the little
+                            girl, in surprise.
+                            <br>
+                            "It's to greet you better, my dear," said the wolf.
+                            <br>
+                            "And what big eyes you have, Grandma..."
+                            <br>
+                            "It's to see you better, my dear!"
+                            <br>
+                            "And what big hands you have!" exclaimed Little Red Riding Hood, approaching the bed.
+                            <br>
+                            "It's to hug you better, my dear!"
+                            <br>
+                            "... And what a big mouth you have," murmured the little girl in a feeble voice.
+                            <br>
+                            "It's better to EAT you with!" growled the wolf, and he leapt out of the bed
+                            and swallowed her as well. Then with a full stomach he fell asleep.
+                            <br>
+                            At that moment a hunter emerged from the forest. He saw the house and decided
+                            to stop and ask for a glass of water. He was looking for a big wolf who had been
+                            terrorising the village.
+                            <br>
+                            The hunter heard a strange whistling inside the house. He looked through
+                            the window and saw the big wolf snoring on Grandma's bed. "The wolf! He won't escape me this time!"
+                            <br>
+                            The hunter opened the stomach of the wolf and, to his surprise, out popped
+                            Grandma and Little Red Riding Hood, safe and sound. "Oh, thank you!" said the old lady.
+                            <br>
+                            "It's safe to go home now", said the hunter to Little Red Riding Hood.
+                            "The big bad wolf is dead, there is no more danger on the path."
+                            <br>
+                            Little Red Riding Hood's mother arrived at Grandma's house when the sun
+                            was setting. She had been worried when her daughter hadn't returned home.
+                            When she saw Little Red Riding Hood she burst into tears of joy. "Oh, you're safe!"
+                            <br>
+                            After having thanked the hunter again, Little Red Riding Hood and her
+                            mother walked back home through the forest.
+                            <br>
+                            As they were walking quickly under the trees, the little girl said to
+                            her mother: "We must always stay on the path and never stop. If we do that, we will stay safe."
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

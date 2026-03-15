@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/grammar.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+                <a th:if="${isAdmin}" href="/admin-page">My Page</a>
+                <a th:if="${isUser}" href="/user-page">My Page</a>
+                <a href="/french" >Learn French</a>
+                <a href="/forum">Forum</a>
+                <a href="/logout" >Logout</a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+<section class="main_section position-relative">
+    <div class="main_bg_box">
+        <img src="/images/grammar.jpg" alt="">
+    </div>
+    <div class="main_bg"></div>
+    <div class="container">
+        <div class="col-md-12 ml-auto">
+            <div class="detail-box">
+                <h1>French Grammar</h1>
+                <button class="button" onclick="scrollToSection('section1')">Vocabulary</button>
+                <button class="button" onclick="scrollToSection('section2')">Verbs and Tenses</button>
+                <button class="button" onclick="scrollToSection('section3')">Nouns and Articles</button>
+                <button class="button" onclick="scrollToSection('section4')">Adjectives</button>
+                <button class="button" onclick="scrollToSection('section5')">Negation</button>
+
+                <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+                <div id="chatWindowcontainer" class="window-container" style="display: none;">
+                    <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+                </div>
+            </div>
+            <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top">Top</button>
+
+
+        </div>
+    </div>
+</section>
+<script>
+    function toggleChatWindow() {
+        var chatWindow = document.getElementById('chatWindowcontainer');
+        chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+    }
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("back-to-top-btn").style.display = "block";
+        } else {
+            document.getElementById("back-to-top-btn").style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; /* For Safari */
+        document.documentElement.scrollTop = 0; /* For Chrome, Firefox, IE and Opera */
+    }
+
+    function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+</script>
+
+
+<section id="section1" class="second_section layout_padding">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="detail_container">
+                    <div class="detail-box">
+
+                        <h1>Vocabulary</h1>
+                    </div>
+                    <div class="detail-box">
+                        <h2>Nouns</h2>
+                        <ul>
+                            <li>French nouns almost always need an article in front of them. You can say <em>le chat</em> (“the cat”) or <em>un chat</em> (“a cat”), but just <em>chat</em> is incorrect.</li>
+                            <li>French nouns have a gender. <em>Le soleil</em> (“the sun”) is masculine; <em>la lune</em> (“the moon”) is feminine.</li>
+                            <li>French nouns have a number. <em>Le chat</em> (“the cat”) is singular; <em>les chats</em> (“the cats”) is plural.</li>
+                            <li>There are common nouns and proper nouns. <em>Un chat</em> (“a cat”) is a common noun. Jupiter, Miyazaki, and Nietzsche are proper nouns.</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <h2>Articles</h2>
+                        <ul>
+                            <li>Articles are mandatory in French.</li>
+                            <li>They agree with the noun in gender and number.</li>
+                        </ul>
+
+                        <ul>
+                            <li>Indefinite articles (Not specific): Un, Une, Des
+                                <ul>
+                                    <li>Un oiseau (“A bird”), Une loutre (“An otter”), Des papillons (“Butterflies”)</li>
+                                </ul>
+                            </li>
+                            <li>Definite articles (Specific): Le, L’, La, Les
+                                <ul>
+                                    <li>Le parc (“The park”)</li>
+                                    <li>Le soleil (“The sun”)</li>
+                                    <li>La vie (“Life”), L’art (“Art”), Le sport (“Sport”)</li>
+                                </ul>
+                            </li>
+                            <li>Partitive articles (Some / A certain amount): Du, De La, Des
+                                <ul>
+                                    <li>Du fromage (“Cheese”), De la farine (“Flour”), Des fruits (“Fruits”)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="detail-box">
+                        <h2>Adjectives</h2>
+                        <p>Adjectives are used to describe a noun. In French grammar, adjectives agree in gender and number with the noun.</p>
+
+                        <ul>
+                            <li>Un petit chemin (“A small path”)</li>
+                            <li>Une petite route (“A small road”)</li>
+                            <li>Deux petites routes (“Two small roads”)</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="detail-box">
+                        <h2>Possessive Adjectives</h2>
+                        <p>Possessive adjectives define whom the noun belongs to. They agree in gender and number.</p>
+
+                        <ul>
+                            <li>Mon jardin (“My garden”)</li>
+                            <li>Ma maison (“My house”)</li>
+                            <li>Mes affaires (“My belongings”)</li>
+                            <li>Ton adresse (“Your address”)</li>
+                            <li>Sa faute (“His / Her fault”)</li>
+                            <li>Ses fleurs (“His / Her flowers”)</li>
+                            <li>Leur voiture (“Their car”)</li>
+                        </ul>
+
+
+                    </div>
+                    <div class="detail-box">
+                        <h2>Demonstrative Adjectives</h2>
+                        <p>Demonstrative adjectives are used to point at something or emphasize its importance (this / that / these / those). In French, we have: ce / cet, cette, ces.</p>
+
+                        <ul>
+                            <li>Ce jardin (“This / That garden”)</li>
+                            <li>Cet arbre (“This / That tree”)</li>
+                            <li>Cette maison (“This / That house”)</li>
+                            <li>Ces villes (“These / Those cities”)</li>
+                        </ul>
+
+                    </div>
+                    <div class="detail-box">
+                        <h2>Adverbs</h2>
+                        <p>Adverbs don’t agree in gender or number; they’re invariable. They describe a verb, an adjective, or another adverb. They define how something is done (slowly / violently), how much (a bit / a lot), or more information about when and where (often / yesterday).</p>
+
+                        <ul>
+                            <li>Je mange lentement. (“I eat slowly.”)</li>
+                            <li>Elle a beaucoup de fromages. (“She has a lot of cheese.”)</li>
+                            <li>Je ne dors jamais l’après-midi. (“I never sleep in the afternoon.”)</li>
+                            <li>Nous partirons demain. (“We will leave tomorrow.”)</li>
+                        </ul>
+
+                    </div>
+                    <div class="detail-box">
+                        <h2>Verbs</h2>
+                        <p>French verbs are split between three groups, depending on the spelling of their infinitive form and their behavior. The three types of verbs are:</p>
+
+                        <ul>
+                            <li>ER (manger, parler, toucher)</li>
+                            <li>IR (dormir, partir, venir)</li>
+                            <li>RE (répondre, prendre)</li>
+                        </ul>
+
+                        <p>In French grammar, conjugation takes place for a variety of tenses (past, future, etc.). More on French conjugation later in this article!</p>
+
+                        <ul>
+                            <li>Some verbs are reflexive and start with se, as in: se réveiller (“to wake up”), se lever (“to stand up”), and s’arrêter (“to stop”). They are often used to describe things you do regularly or changes of state (such as “to wake up,” “to fall asleep,” “to sit down”) that have an effect on oneself.</li>
+                        </ul>
+
+                    </div>
+                    <div class="detail-box">
+                        <h2>Pronouns</h2>
+                        <p>French pronouns come in many shapes and sizes:</p>
+
+                        <h7>Personal pronouns</h7>
+                        <ul>
+                            <li>Personal subjects: Elle a faim. (“She’s hungry.”)</li>
+                            <li>Stressed pronouns: C’est moi ! (“It’s me!”)</li>
+                            <li>Direct pronouns: Nous le donnons. (“We give it.”)</li>
+                            <li>Indirect pronouns: Ils vous parlent. (“They talk to you.”)</li>
+                            <li>Reflexive pronouns: Je me lève. (“I stand up.”)</li>
+                        </ul>
+
+                        <h7>Impersonal pronouns</h7>
+                        <ul>
+                            <li>Impersonal subjects: Ça commence maintenant. (“It starts now.”)</li>
+                            <li>Adverbial pronouns: Je veux y aller. (“I want to go there.”)</li>
+                            <li>Relative pronouns: Je sais que tu es là. (“I know that you are here.”)</li>
+                            <li>Demonstrative pronouns: Celles de gauche. (“These on the left.”)</li>
+                            <li>Interrogative pronouns: Qui es-tu ? (“Who are you?”)</li>
+                            <li>Indefinite pronouns: Tout est possible. (“Anything is possible.”)</li>
+                        </ul>
+
+
+                    </div>
+
+                    <div class="detail-box">
+                        <h2>Conjunctions</h2>
+                        <p>Conjunctions are these convenient little words that we use to connect things:</p>
+
+                        <ul>
+                            <li>Listing things: Des fruits et des légumes (“Fruits and vegetables”)</li>
+                            <li>Setting conditions: Je ne bois pas, sinon je m’endors. (“I don’t drink, otherwise I fall asleep.”)</li>
+                            <li>Expressing causality: Je mange car j’ai faim. (“I’m eating because I’m hungry.”)</li>
+                            <li>Objecting: Je mange du fromage mais pas de camembert. (“I eat cheese but not camembert.”)</li>
+                            <li>Expressing purpose: Je médite pour me relaxer. (“I meditate to relax.”)</li>
+                        </ul>
+
+
+                    </div>
+                    <div class="detail-box">
+                        <h2>Prepositions</h2>
+                        <p>In French grammar, prepositions can be followed by:</p>
+
+                        <ul>
+                            <li>…a noun:
+                                <ul>
+                                    <li>Le chat est dans le jardin. (“The cat is in the garden.”)</li>
+                                    <li>Elle t’attendra devant la maison. (“She will wait for you in front of the house.”)</li>
+                                    <li>Avec ou sans patates ? (“With or without potatoes?”)</li>
+                                </ul>
+                            </li>
+                            <li>…an infinitive verb:
+                                <ul>
+                                    <li>Je me prépare à partir. (“I’m getting ready to leave.”)</li>
+                                    <li>Il essaye de partir. (“He’s trying to leave.”)</li>
+                                    <li>J’étudie sur FrenchPod101 pour parler Français. (“I study on FrenchPod101 to speak French.”)</li>
+                                </ul>
+                            </li>
+                            <li>…or a stress pronoun:
+                                <ul>
+                                    <li>On va chez moi ? (“Are we going to my place?”)</li>
+                                    <li>Elle vient avec moi. (“She’s coming with me.”)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section id="section2" class="second_section2 layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="detail_container">
+                    <div class="detail-box">
+                        <h1>Verbs and Tenses</h1>
+                    </div>
+                    <div class="detail-box">
+                        <p>Conjugation in French has a lot in common with English conjugation, but it adds a hairy layer of complexity; the verb ending changes depending on the person, mood, voice, and tense.</p>
+
+                        <p>At first, it may seem overwhelming. But luckily, most verbs follow a set of rules and patterns that you can learn rather quickly.</p>
+
+                        <h2>Conjugation Basics</h2>
+                        <p>Singular pronouns:</p>
+                        <ul>
+                            <li>je / j’ (“I”)</li>
+                            <li>tu / vous (Casual “you” / Formal “you”)</li>
+                            <li>il / elle (“he” / “she”)</li>
+                        </ul>
+
+                        <p>Plural pronouns:</p>
+                        <ul>
+                            <li>nous (“we”)</li>
+                            <li>vous (“you”)</li>
+                            <li>ils / elles (Male “they” / Female “they”)</li>
+                        </ul>
+
+                        <p>The ending of the verb depends on the person (or pronoun):</p>
+
+                        <ul>
+                            <li>Je marche (“I walk”)</li>
+                            <li>Nous marchons (“We walk”)</li>
+                            <li>Elles marchent (“They walk”)</li>
+                        </ul>
+
+                        <p>Just like English, French has simple tenses and compound tenses.</p>
+
+                        <p>Simple tenses are conjugated by changing the verb ending, while compound tenses also add an auxiliary together with the verb.</p>
+
+                        <ul>
+                            <li>Nous marchons (“We walk”) – Simple tense: Présent.</li>
+                            <li>Nous avons marché (“We have walked”) – Compound tense: Passé composé.</li>
+                        </ul>
+
+                        <p>At first glance, the list of all seventeen French tenses seems intimidating, but most of them are only ever used in literature. On a daily basis, you won’t need more than five or six to deal with any kind of situation.</p>
+
+
+                    </div>
+
+                    <div class="detail-box">
+                        <h2>Regular and Irregular Verbs</h2>
+                        <p>Like in most languages, including English, the most useful and common French verbs are the most irregular. Verbs like être (“to be”), avoir (“to have”), or faire (“to do”) are highly irregular.</p>
+
+                        <p>However, it’s important to quickly learn how to conjugate the regular verbs, as their conjugation rules will help you deal with the majority of verbs that you’ll encounter. So, let’s start with that.</p>
+
+                        <p>Regular verb: Marcher (“To walk”) ← This is the infinitive form of a 1st group verb.</p>
+
+                        <p>March ← This is the “stem.”</p>
+
+                        <p>Here’s how it looks in present tense:</p>
+
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>1st sg (I)</th>
+                                <th>2nd sg (you)</th>
+                                <th>3rd sg (she)</th>
+                                <th>1st pl (we)</th>
+                                <th>2nd pl (you)</th>
+                                <th>3rd pl (they)</th>
+                            </tr>
+                            <tr>
+                                <td>Stem</td>
+                                <td>+</td>
+                                <td>Stem + es</td>
+                                <td>Stem + e</td>
+                                <td>Stem + ons</td>
+                                <td>Stem + ez</td>
+                                <td>Stem + ent</td>
+                            </tr>
+                            <tr>
+                                <td>Present Tense</td>
+                                <td>Je marche</td>
+                                <td>Tu marches</td>
+                                <td>Elle marche</td>
+                                <td>Nous marchons</td>
+                                <td>Vous marchez</td>
+                                <td>Ils marchent</td>
+                            </tr>
+                        </table>
+                        <p></p>
+
+                        <p>Now, if you follow this simple pattern, you can conjugate countless similar French verbs:</p>
+
+                        <ul>
+                            <li>Parler (“To talk”): Je parle, Tu parles, Elle parle, Nous parlons, Vous parlez, Elles parlent</li>
+                            <li>Penser (“To think”): Je pense, Tu penses, Elle pense, Nous pensons, Vous pensez, Elles pensent</li>
+                            <li>Aimer (“To love”): J’aime, Tu aimes, Elle aime, Nous aimons, Vous aimez, Elles aiment</li>
+                            <li>Demander (“To ask”): Je demande, Tu demandes, Elle demande, Nous demandons, Vous demandez, Elles demandent</li>
+                            <li>Utiliser (“To use”): J’utilise, Tu utilises, Elle utilise, Nous utilisons, Vous utilisez, Elles utilisent</li>
+                        </ul>
+
+                    </div>
+                    <div class="detail-box">
+                        <h2>The Two Most Important Verbs</h2>
+                        <p>Now that you know the basics of French conjugation, let’s have a look at two crucial verbs that don’t follow the rules:</p>
+
+                        <p><b>Être</b> (“To be”)<br>
+                            Je suis<br>Tu es<br> Elle est<br> Nous sommes<br> Vous êtes<br> Elles sont
+                            <br>
+                            <br>
+                            <b>Avoir</b> (“To have”)<br>
+                            J’ai<br> Tu as<br> Elle a<br> Nous avons<br> Vous avez<br> Elles ont
+                        </p>
+                        <p>These two verbs are not only useful in themselves, but also as auxiliaries to form the compound tenses we mentioned earlier.</p>
+
+                        <p>Elle est revenue de vacances. (“She has returned from vacation.”)</p>
+                        <p>Tu es allé au cinéma. (“You have gone to the movie theater.”)</p>
+                        <p>J’ai rencontré Julien. (“I have met Julien.”)</p>
+                        <p>Nous avons fini de manger. (“We have finished eating.”)</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section3" class="second_section3 layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="detail_container">
+                    <div class="detail-box">
+                        <h1>Nouns and Articles</h1>
+                    </div>
+                    <div class="detail-box">
+                        <h2>★ Rule #1: Nouns have a gender.</h2>
+
+                        <p>In French grammar, gender is applied to each and every noun. French nouns are either masculine or feminine.</p>
+
+                        <p>For example, <em>un mois</em> (“a month”) is masculine, while <em>une semaine</em> (“a week”) is feminine.</p>
+
+                        <h2>★ Rule #2: Nouns have an article.</h2>
+
+                        <p>Unlike those in English, French nouns always have an article and cannot be used without one.</p>
+
+                        <p>You can say <em>un chien</em> (“a dog”) or <em>le chien</em> (“the dog”), but never <em>chien</em>.</p>
+
+                        <h2>★ Rule #3: Nouns and articles agree in gender.</h2>
+
+                        <p>How they change when put in the feminine form depends on their initial spelling.</p>
+
+                        <ul>
+                            <li><em>Un boulanger</em> / <em>Une boulangère</em> (“A baker”)</li>
+                            <li><em>Un fermier</em> / <em>Une fermière</em> (“A farmer”)</li>
+                            <li><em>Un chanteur</em> / <em>Une chanteuse</em> (“A singer”)</li>
+                            <li><em>Un acteur</em> / <em>Une actrice</em> (“An actor” / “An actress”)</li>
+                            <li><em>Un chien</em> / <em>Une chienne</em> (“A dog”)</li>
+                        </ul>
+
+                        <h2>★ Rule #4: Nouns and articles agree in number.</h2>
+
+                        <p>Like with gender, there are certain changes an article goes through to agree with the noun in number.</p>
+
+                        <ul>
+                            <li><em>Un chat</em> (“A cat”) / <em>Des chats</em> (“Cats”)</li>
+                            <li><em>Le chat</em> (“The cat”) / <em>Les chats</em> (“The cats”)</li>
+                        </ul>
+
+                        <p>But there are also a bunch of special cases:</p>
+
+                        <ul>
+                            <li><em>Un cheval</em> (“A horse”) / <em>Des chevaux</em> (“Horses”)</li>
+                            <li><em>Un hibou</em> (“An owl”) / <em>Des hiboux</em> (“Owls”)</li>
+                            <li><em>Un bateau</em> (“A boat”) / <em>Des bateaux</em> (“Boats”)</li>
+                            <li><em>Une souris</em> (“A mouse”) / <em>Des souris</em> (“Mice”)</li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section id="section4" class="second_section4 layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="detail_container">
+                    <div class="detail-box">
+                        <h1>Adjectives</h1>
+                    </div>
+                    <div class="detail-box">
+                        <h2>★ Rule #1: Adjective placement may vary.</h2>
+
+                        <p>The majority of French adjectives are placed AFTER the noun they’re describing.</p>
+
+                        <ul>
+                            <li><em>Un mur épais</em> (“A thick wall”)</li>
+                            <li><em>Une voix douce</em> (“A soft voice”)</li>
+                            <li><em>Des assiettes sales</em> (“Dirty plates”)</li>
+                        </ul>
+
+                        <p>However, some of the most common adjectives come BEFORE the noun.</p>
+
+                        <ul>
+                            <li><em>Un bon film</em> (“A good movie”)</li>
+                            <li><em>Une petite fille</em> (“A little girl”)</li>
+                            <li><em>Un nouveau livre</em> (“A new book”)</li>
+                        </ul>
+
+                        <h2>★ Rule #2: Adjectives agree with the noun in gender.</h2>
+
+                        <p>Adjectives must also agree in gender with the noun they’re describing.</p>
+
+                        <p>Most French adjectives have different feminine and masculine forms.</p>
+
+                        <ul>
+                            <li><em>Un garçon intelligent</em> (“A smart boy”)</li>
+                            <li><em>Une fille intelligente</em> (“A smart girl”)</li>
+                        </ul>
+
+                        <p>But some adjectives are invariable:</p>
+
+                        <ul>
+                            <li><em>Un train rapide</em> (“A fast train”)</li>
+                            <li><em>Une voiture rapide</em> (“A fast car”)</li>
+                        </ul>
+
+                        <h2>★ Rule #3: Adjectives agree with the noun in number.</h2>
+
+                        <p>Finally, adjectives must agree in number with the noun they’re describing.</p>
+
+                        <p>Most of them simply take a final -s:</p>
+
+                        <ul>
+                            <li><em>Un petit chien</em> (“A small dog”)</li>
+                            <li><em>Des petits chiens</em> (“Small dogs”)</li>
+                            <li><em>Des petites chiennes</em> (“Small dogs” – Feminine)</li>
+                        </ul>
+
+                        <p>Adjectives ending with -s or -x are invariable.</p>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section id="section5" class="second_section5 layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="detail_container">
+                    <div class="detail-box">
+                        <h1>Negation</h1>
+                    </div>
+                    <div class="detail-box">
+                        <h2>French Negative Sentences</h2>
+
+                        <p>French negative sentences are built using the particle <em>Ne</em> + one or more negative words.</p>
+
+                        <p>In French grammar, negation is achieved by placing these two parts around the verb, as follows:</p>
+
+                        <p>[Subject] <em>ne</em> [verb] <em>pas</em>.</p>
+
+                        <ul>
+                            <li>Je mange. (“I eat.”)</li>
+                            <li>Je ne mange pas. (“I don’t eat.”)</li>
+                        </ul>
+
+                        <p>There’s a collection of negative words you can use:</p>
+
+                        <ul>
+                            <li>Je ne mange jamais. (“I never eat.”)</li>
+                            <li>Je ne mange rien. (“I don’t eat anything.”)</li>
+                            <li>Je ne mange personne. (“I don’t eat anyone.”)</li>
+                            <li>Je ne mange plus. (“I don’t eat anymore.”)</li>
+                            <li>Je ne mange nulle part. (“I’m not eating anywhere.”)</li>
+                            <li>Je ne mange aucune viande. (“I don’t eat any meat.”)</li>
+                            <li>Je ne mange que de la viande. (“I eat nothing but meat.”)</li>
+                        </ul>
+
+                        <p>Negation follows the exact same pattern with any verb…</p>
+
+                        <ul>
+                            <li>Je ne vais nulle part. (“I’m not going anywhere.”)</li>
+                            <li>Nous ne parlons jamais. (“We never talk.”)</li>
+                            <li>Elle ne fume plus. (“She’s not smoking anymore.”)</li>
+                            <li>Tu ne sais rien, Jon Snow. (“You know nothing, Jon Snow.”)</li>
+                        </ul>
+
+                        <p>…except when the verb starts with a vowel and <em>Ne</em> is shortened to <em>N’</em>:</p>
+
+                        <ul>
+                            <li>Je n’ai rien à dire. (“I have nothing to say.”)</li>
+                            <li>Tu n’aimes pas. (“You don’t like.”)</li>
+                            <li>Nous n’essayons pas. (“We are not trying.”)</li>
+                        </ul>
+
+                        <p>You can also build sentences using several negative words:</p>
+
+                        <ul>
+                            <li>Je ne dirai jamais rien à personne. (“I will never tell anything to anyone.”)</li>
+                            <li>Elle n’est plus allée nulle part après cela. (“She didn’t go anywhere anymore after this.”)</li>
+                        </ul>
+
+                        <p>It’s also possible to start a sentence with a negative word:</p>
+
+                        <ul>
+                            <li>Rien n’arrive sans raison. (“Nothing happens without a reason.”)</li>
+                            <li>Personne ne bouge. (“Nobody moves.”)</li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

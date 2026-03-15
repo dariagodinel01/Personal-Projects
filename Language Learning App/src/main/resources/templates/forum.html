@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link href="/css/font.css" rel="stylesheet"/>
+    <link href="/css/forum.css" rel="stylesheet"/>
+    <link href="/css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a href="/home" class="navbar-brand">
+                <span>NewLaguages</span>
+            </a>
+            <div class="list-nav">
+
+                <div class="list-nav">
+
+                    <a href="/french">Learn French</a>
+                    <a href="/logout">Logout</a>
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="main_section position-relative">
+    <div class="main_bg_box">
+        <img src="/images/forum1.jpg" alt="">
+    </div>
+    <div class="main_bg"></div>
+    <div class="container">
+        <div class="col-md-24 ml-auto">
+            <div class="detail-box">
+                <h1>Forum</h1>
+                <h3>Ask the community!</h3>
+
+                <button onclick="scrollToTop()" id="back-to-top-btn" title="Go to top">Top</button>
+
+                <button onclick="toggleChatWindow()" id="chatwindow" title="Chat with me">Chat</button>
+
+                <div id="chatWindowcontainer" class="window-container" style="display: none;">
+                    <iframe src="http://127.0.0.1:5000/" id="chatContainer"></iframe>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function toggleChatWindow() {
+        var chatWindow = document.getElementById('chatWindowcontainer');
+        chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+    }
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("back-to-top-btn").style.display = "block";
+        } else {
+            document.getElementById("back-to-top-btn").style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; /* For Safari */
+        document.documentElement.scrollTop = 0; /* For Chrome, Firefox, IE and Opera */
+    }
+
+</script>
+
+
+<section class="second_section layout_padding">
+    <div class="container">
+        <div class="detail-box">
+            <div id="MyQ" class="MyQ_container">
+                <div id="questionForm" class="questionForm">
+                    <form action="/forum" method="post">
+
+                        <input type="text" id="questionText" name="message" placeholder="Enter your question">
+                        <button type="submit" class="send-button">Post Question</button>
+
+                    </form>
+                </div>
+
+                <div class="forum-container">
+                    <div th:each="forum : ${forums}" class="forum-item">
+                        <div class="forum-post">
+                            <div class="headline" th:text="${forum.message}"></div>
+                            <div class="name-user" th:text="${forum.user.fullname}"></div>
+                            <div class="time" th:text="${forum.completionTime}"></div>
+                        </div>
+
+
+
+                        <div class="containers-style">
+                            <!-- replay-->
+                            <div class="reply-container">
+                                <button class="reply-button button" onclick="toggleReply(this)">Reply</button>
+                                <div class="reply-form" style="display: none;">
+                                    <form action="/forum/comment" method="post">
+
+                                        <input type="hidden" name="forumId" th:value="${forum.id}">
+                                        <input id="commentText" type="text" name="commentText" placeholder="Type your comment...">
+                                        <button type="submit">Submit Reply</button>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- comms-->
+                            <div class="comment-container">
+                                <button class="comments-button button" onclick="toggleComments(this)">Comments</button>
+
+                                <div class="comments-list" style="display: none;">
+                                    <div th:each="comment : ${forum.comments}" class="comment-item">
+                                        <div class="comment-text" th:text="${comment.commentText}"></div>
+                                        <div class="comment-info">
+                                            <div class="comment-user" th:if="${comment.user}" th:text="${comment.user.fullname}"></div>
+
+                                            <div class="comment-time" th:text="${comment.commentTime}"></div>
+                                        </div>
+                                        <hr class="comment-divider">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div th:if="${#lists.isEmpty(forums)}">
+                        <p>No posts available.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+    function toggleReply(button) {
+        const replyForm = button.nextElementSibling;
+        if (replyForm) {
+            replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+    function toggleComments(button) {
+        const commentsContainer = button.nextElementSibling;
+        console.log('Button:', button);
+        console.log('Comments Container:', commentsContainer);
+        if (commentsContainer) {
+            commentsContainer.style.display = commentsContainer.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+
+
+</script>
+
+
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        NewLanguages
+                    </a>
+                    <p>Explore our diverse collection of language resources and embark on your journey to linguistic proficiency today.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="displayYear"></span>All Rights Reserved By
+                <a href="#">NewLanguages</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
