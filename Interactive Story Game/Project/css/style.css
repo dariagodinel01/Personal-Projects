@@ -1,0 +1,104 @@
+body{
+    margin:0;
+    padding:0;
+    background: url('../images/background.jpg');
+    background-size: cover;
+   
+  background-position: center center;
+    background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    
+}
+.top{
+    padding:10px;
+}
+.navigation{
+    list-style: none;
+    text-align: center;
+    padding-top: 12px;
+
+    
+}
+.navigation li{
+    display: inline-block;
+    margin: 0 12px;
+}
+.navigation a{
+    color:black;
+    font-size: 40px;
+    font-family: "chiller";
+    font-weight: bolder;
+}
+.navigation a:hover{
+    color:bisque;
+    
+}
+.menu{
+     text-align: center;
+}
+.menu h1{
+    padding-bottom:20px;
+    font-size: 100px;
+    font-family: "chiller";
+    font-weight: bolder;
+    
+}
+.menu li{
+  
+    padding-bottom:20px;
+    list-style-type: none;
+    font-family: "chiller";
+    font-weight: bolder;
+     font-size: 50px;
+    padding-right: 20px;
+  
+}
+bottom {
+    font-family: "arial";
+	height: 40px;
+	text-align: center;
+	color: black;
+}
+.menu a{
+    color: black;
+}
+.menu a:hover {
+	color: black;
+    background: transparent;
+  }
+.set{
+     text-align: center;
+}
+.set h1{
+   
+    padding-bottom:20px;
+    font-size: 90px;
+    font-family: "chiller";
+    font-weight: bolder;
+    
+    
+}
+
+.how{
+     text-align: center;
+}
+.how h1{
+   
+    padding-bottom:20px;
+    font-size: 90px;
+    font-family: "chiller";
+    font-weight: bolder;
+    
+    
+}
+.how p{
+   
+    padding-bottom:5px;
+    font-size: 25px;
+    font-family: "chiller";
+    font-weight: bolder;
+    margin: 0 200px;
+    
+    
+}
