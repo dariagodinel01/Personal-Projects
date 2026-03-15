@@ -1,0 +1,244 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you?",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey there!",
+        "Hello, tell me your problem.",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye"
+      ],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon.",
+        "Let me know if need help again!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!"
+      ],
+      "responses": [
+        "Happy to help!",
+        "Any time!",
+        "My pleasure",
+        "Let me know if need help again!"
+      ]
+    },
+    {
+      "tag": "french",
+      "patterns": [
+        "Teach me French",
+        "Help me learn French",
+        "French learning"
+      ],
+      "responses": [
+        "Sure, I can help you with that!",
+        "Let's learn some French!",
+        "I can translate words and explain grammar rules.",
+        "Learning French is fun!"
+      ]
+    },
+    {
+      "tag": "translate",
+      "patterns": [
+        "Translate [word] to French",
+        "French translation of [word]",
+        "How do you translate [word] in French?",
+        "Translate [word]"
+      ],
+      "responses": [
+        "The translation of [word] in French is [translation].",
+        "[word] in French is [translation].",
+        "It means [translation] in French.",
+        "The French equivalent of [word] is [translation].",
+        "[translation]"
+      ]
+    },
+    {
+      "tag": "grammar",
+      "patterns": [
+        "French grammar",
+        "Explain French grammar",
+        "Grammar rules in French",
+        "French grammar help",
+        "What is verb conjugation?",
+        "Explain noun genders in French"
+      ],
+      "responses": [
+        "French grammar encompasses various elements such as noun gender, articles, adjectives agreeing with nouns, verb conjugations based on subject, tense variations for different temporal contexts, pronoun usage, prepositions indicating relationships, negation structures, and flexible word order for emphasis or stylistic choices. Nouns and adjectives must match in gender and number, verbs change according to tense and mood, and pronouns replace nouns in sentences. Prepositions play a crucial role in expressing location, direction, and time relationships. Negation in French involves using \"ne...pas\" around the verb, and word order can vary depending on the sentence's focus. Mastery of French grammar requires consistent practice and exposure to the language's nuances and exceptions.",
+        "French grammar involves conjugating verbs to match the subject's person and number, classifying into regular and irregular verbs with specific patterns, such as -er, -ir, and -re endings. Nouns and adjectives agree in gender and number, while prepositions convey relationships, and pronouns replace nouns in sentences. Negation uses \"ne...pas,\" and word order can vary for emphasis. "
+      ]
+    },
+    {
+      "tag": "verb_conjugation",
+      "patterns": [
+        "What is verb conjugation?",
+        "Explain verb conjugation",
+        "Verb Conjugation"
+
+      ],
+      "responses": [
+        "Verb conjugation is crucial in French; it changes based on the subject.",
+        "Verb conjugation is a crucial aspect of French grammar, as verbs change their form to match the subject in terms of person and number. French verbs are classified into three main groups based on their infinitive endings (-er, -ir, -re), each group having specific conjugation patterns. Regular verbs follow predictable conjugation rules, while irregular verbs have unique conjugations.",
+        "Conjugation involves altering the verb stem and adding appropriate endings to match the subject pronoun (je, tu, il/elle/on, nous, vous, ils/elles) and the tense or mood (present, past, future, conditional, subjunctive, etc.). Consistent practice and memorization of verb conjugations are essential for mastering French grammar."
+
+      ]
+    },
+    {
+      "tag": "tenses",
+      "patterns": [
+        "Tell me more about tenses",
+        "Explain how tenses work in French for verbs",
+        "Tenses in French",
+        "Verb tenses in French"
+
+      ],
+      "responses": [
+        "French language has several tenses, each used to express different time frames and aspects of actions. Here are some key tenses in French grammar:\n\nPresent Tense (Présent): Used to describe actions happening now or regularly.\n\nJe parle français. (I speak French.)\nPast Tenses:\n\nPassé Composé: Used for completed actions in the past.\n\nJ'ai mangé une pomme. (I ate an apple.)\nImparfait: Used for ongoing or repeated actions in the past, or to describe background information.\n\nIl regardait la télévision quand je suis arrivé. (He was watching TV when I arrived.)\nFuture Tense (Futur Simple): Used to express actions that will happen in the future.\n\nJe mangerai une glace demain. (I will eat an ice cream tomorrow.)\nConditional Mood (Conditionnel): Used to express hypothetical or polite requests.\n\nJe mangerais une glace si j'avais de l'argent. (I would eat an ice cream if I had money.)\nSubjunctive Mood (Subjonctif): Used in dependent clauses to express doubt, necessity, or subjectivity.\n\nIl faut que je parte maintenant. (I have to leave now.)\nImperative Mood (Impératif): Used for commands or requests.\n\nParlez plus lentement, s'il vous plaît. (Speak more slowly, please.)\nPast Perfect (Plus-que-parfait): Used to describe an action that occurred before another action in the past.\n\nElle avait déjà mangé quand je suis arrivé. (She had already eaten when I arrived.)",
+        "French tenses play a crucial role in expressing actions and events at different points in time. The present tense describes ongoing actions or habits, while past tenses like the passé composé and imparfait convey completed or ongoing actions in the past. The future tense anticipates actions yet to happen, and the conditional mood expresses hypothetical situations or polite requests. The subjunctive mood adds nuance for doubts or necessities, and the imperative mood is for giving commands. Advanced tenses like the plus-que-parfait detail actions that occurred before others in the past. Mastering these tenses enables clear communication and comprehension in spoken and written French, enriching language proficiency and cultural exchange."
+      ]
+    },
+    {
+      "tag": "nouns",
+      "patterns": [
+        "Tell me more about nouns",
+        "Explain how nouns work in French",
+        "Nouns in French"
+
+      ],
+      "responses": [
+        "Nouns in French can be masculine or feminine, and they often determine the gender of other words in a sentence. Masculine nouns typically end in consonants, while feminine nouns often end in -e. However, there are many exceptions. Articles and adjectives must agree in gender and number with the nouns they modify. Plural nouns usually end in -s, but irregular plural forms exist.",
+        "Gender: French nouns are either masculine or feminine. Masculine nouns often end in consonants, while feminine nouns frequently end in -e. However, there are many exceptions, so it's crucial to learn the gender along with the noun. \nMasculine: le garçon (the boy), le livre (the book)\nFeminine: la fille (the girl), la maison (the house). \nAdjectives: Adjectives also agree in gender and number with the nouns they describe.\n\nMasculine singular: un grand garçon (a tall boy)\nFeminine singular: une grande fille (a tall girl)\nMasculine plural: des grands garçons (tall boys)\nFeminine plural: des grandes filles (tall girls)\nExceptions: Some nouns have the same form for both masculine and feminine, while others change meaning based on gender.\n\nMasculine/feminine: un artiste (a male artist), une artiste (a female artist)\nChanging meaning: un livre (a book), une livre (a pound)"
+      ]
+    },
+    {
+      "tag": "articles",
+      "patterns": [
+        "Tell me more about articles",
+        "Explain how articles work in French",
+        "Articles in French"
+
+      ],
+      "responses": [
+        "Articles in French are important determiners that come before nouns to indicate their definiteness (whether they are specific or general) and sometimes their quantity. There are definite articles (le, la, les) used for specific nouns and indefinite articles (un, une, des) used for nonspecific nouns. The choice of article depends on the gender (masculine or feminine) and number (singular or plural) of the noun.",
+        "Definite Articles:\n\nLe (masculine singular): le garçon (the boy)\nLa (feminine singular): la fille (the girl)\nLes (plural): les garçons (the boys), les filles (the girls)\nIndefinite Articles:\n\nUn (masculine singular): un livre (a book)\nUne (feminine singular): une maison (a house)\nDes (plural): des livres (some books), des maisons (some houses) \n\nPartitive Articles:\nDu (masculine singular): du pain (some bread)\nDe la (feminine singular): de la salade (some salad)\nDes (plural): des pommes (some apples)"
+      ]
+    },
+    {
+      "tag": "adjectives",
+      "patterns": [
+        "Tell me more about adjectives",
+        "Explain adjectives",
+        "Adjectives in French"
+
+      ],
+      "responses": [
+        "Adjectives in French are essential for describing nouns by indicating qualities such as size, color, nationality, or characteristics. They must agree in gender (masculine/feminine) and number (singular/plural) with the nouns they modify. Typically, adjectives come after the noun they describe, unlike in English where they often precede the noun. However, certain adjectives of beauty, age, goodness, size, and shape (BAGS) usually come before the noun. Learning the rules of adjective agreement and placement is fundamental to mastering French grammar and expressing ideas accurately and elegantly.",
+        "Adjectives in French must agree in gender and number with the nouns they modify. This means that they change their form to match the gender (masculine/feminine) and number (singular/plural) of the noun they describe.\n\nMasculine singular: un grand garçon (a tall boy)\nFeminine singular: une grande fille (a tall girl)\nMasculine plural: de grands garçons (tall boys)\nFeminine plural: de grandes filles (tall girls)\nComparative and Superlative:\nAdjectives can also be used in comparative and superlative forms to compare or describe the degree of a quality.\n\nComparative (plus...que, moins...que): Elle est plus grande que moi. (She is taller than me.)\nSuperlative (le/la/les plus...): C'est la plus belle fleur du jardin. (It's the most beautiful flower in the garden.)"
+      ]
+    },
+    {
+      "tag": "negation",
+      "patterns": [
+        "Tell me more about negation",
+        "Explain negation",
+        "Negation in French"
+
+      ],
+      "responses": [
+        "Negation in French is a fundamental aspect of grammar used to express negation or denial in sentences. The most common way to form negation in French is by using the word \"ne\" before the verb and \"pas\" after it. However, for compound tenses (like passé composé), \"ne\" is placed before the auxiliary verb, and \"pas\" after the past participle. Here are examples in the present tense and passé composé:\n\nPresent Tense:\n\nJe ne parle pas français. (I don't speak French.)\nIl n'aime pas les légumes. (He doesn't like vegetables.)\nPassé Composé:\n\nElle n'a pas mangé de viande hier. (She didn't eat meat yesterday.)\nNous ne sommes pas allés au cinéma la semaine dernière. (We didn't go to the movies last week.)",
+        "Negation in French is formed by placing \"ne\" before the verb and \"pas\" after it, such as \"Je ne parle pas\" (I don't speak). In compound tenses like passé composé, \"ne\" is placed before the auxiliary verb and \"pas\" after the past participle. Other words like \"rien\" (nothing), \"personne\" (nobody), \"plus\" (no more), and \"jamais\" (never) can also modify the meaning of negation when combined with \"ne...pas.\" Understanding negation is crucial for expressing negative statements accurately in French."
+      ]
+    },
+    {
+      "tag": "vocabulary",
+      "patterns": [
+        "Tell me more about vocabulary",
+        "Explain vocabulary",
+        "Vocabulary in French"
+
+      ],
+      "responses": [
+        "Vocabulary is the collection of words and phrases that a person knows and understands in a language. In the context of learning a new language like French, building vocabulary involves acquiring words for various objects, actions, emotions, and concepts. This includes nouns, verbs, adjectives, adverbs, prepositions, and more. Learning vocabulary is essential for effective communication, reading comprehension, and writing proficiency in French. Strategies for vocabulary acquisition may include flashcards, context-based learning, regular reading, listening to native speakers, and using language-learning apps or resources. Gradually expanding one's vocabulary enhances language skills and fluency over time.",
+        "Nouns:\n\nLa voiture (car)\nLe chat (cat)\nLa maison (house)\nL'école (school)\nLe livre (book)\nVerbs:\n\nParler (to speak)\nManger (to eat)\nAller (to go)\nRegarder (to watch)\nÉtudier (to study)\nAdjectives:\n\nGrand (tall/big)\nPetit (small)\nBeau (beautiful)\nIntelligent (intelligent)\nSympathique (friendly)\nAdverbs:\n\nVite (quickly)\nBien (well)\nBeaucoup (a lot)\nRarement (rarely)\nToujours (always)\nPrepositions:\n\nÀ (to, at)\nDans (in, into)\nSur (on, onto)\nSous (under, below)\nAvec (with)\nConjunctions:\n\nEt (and)\nOu (or)\nMais (but)\nDonc (so, therefore)\nCar (because)\nExpressions:\n\nBonjour (hello)\nMerci (thank you)\nS'il vous plaît (please)\nComment ça va? (How are you?)\nÀ bientôt! (See you soon!)"
+      ]
+    },
+    {
+      "tag": "informal",
+      "patterns": [
+        "Give me an example of an informal letter",
+        "Informal Letter in French"
+
+      ],
+      "responses": [
+        "Cher(e) [Name],\nJ'espère que tu vas bien et que tout se passe bien pour toi. Je profite de ce moment pour te raconter en détail mes récentes vacances à la montagne. Chaque jour était une aventure nouvelle, entre les randonnées en pleine nature, les repas conviviaux en famille, et les soirées au coin du feu. J'aimerais vraiment te montrer les photos que j'ai prises lors de ces moments mémorables. J'espère te voir bientôt pour que nous puissions échanger nos expériences. Prends soin de toi !\nÀ bientôt,\n[Your Name]"
+      ]
+    },
+    {
+      "tag": "formal",
+      "patterns": [
+        "Give me an example of an formal letter",
+        "Formal Letter in French"
+
+      ],
+      "responses": [
+        "Monsieur/Madame [Last Name],\nJe vous adresse la présente lettre pour exprimer mon vif intérêt pour le poste de responsable marketing au sein de votre entreprise renommée. Ayant acquis une solide expérience dans le domaine du marketing digital, je suis convaincu(e) de pouvoir apporter une contribution significative à votre équipe. Mon CV ci-joint détaille mes compétences et réalisations pertinentes. Je reste à votre disposition pour convenir d'un entretien à votre convenance. Je vous prie d'agréer, Monsieur/Madame [Last Name], l'expression de mes salutations distinguées.\nCordialement,\n[Your Name]"
+      ]
+    },
+    {
+      "tag": "opinion",
+      "patterns": [
+        "Give me an example of an opinion essay",
+        "Opinion essay in French"
+
+      ],
+      "responses": [
+      "Dans notre société moderne, la question de l'impact de la technologie sur nos vies est devenue centrale. Dans mon opinion, la technologie est bénéfique pour la société car elle facilite les communications, améliore l'accès à l'information et favorise l'innovation. En effet, les réseaux sociaux nous connectent avec des personnes du monde entier, les moteurs de recherche nous offrent une mine de connaissances, et les avancées technologiques créent de nouvelles opportunités professionnelles. Bien sûr, il est important de trouver un équilibre et d'utiliser la technologie de manière responsable pour éviter ses effets négatifs potentiels. En conclusion, la technologie a un impact positif significatif sur notre vie quotidienne."
+      ]
+    },
+    {
+      "tag": "narrative",
+      "patterns": [
+        "Give me an example of an narrative text",
+        "Narrative Text in French"
+
+      ],
+      "responses": [
+        "Il était une fois, dans un petit village niché au cœur des montagnes, un jeune garçon nommé Pierre. Sa curiosité sans bornes le poussait à explorer chaque recoin de la nature environnante, des rivières limpides aux sommets enneigés. Un jour, alors qu'il suivait un sentier secret, il découvrit une grotte mystérieuse ornée de symboles anciens. Ainsi débuta l'aventure extraordinaire de Pierre, jalonnée de rencontres inattendues, de défis courageux, et de leçons précieuses sur l'amitié et le courage."
+      ]
+    },
+    {
+      "tag": "descriptive",
+      "patterns": [
+        "Give me an example of an descriptive text",
+        "Descriptive Text in French"
+
+      ],
+      "responses": [
+       "Le coucher de soleil sur la plage de sable doré était un spectacle à couper le souffle. Les teintes dorées, roses et pourpres du ciel se mêlaient harmonieusement, créant un tableau d'une beauté irréelle. Les vagues caressant doucement le rivage ajoutaient une symphonie apaisante à ce tableau naturel. Les silhouettes des palmiers se dessinaient en ombre chinoise sur le ciel embrasé, offrant un cadre idyllique pour des moments de contemplation et de paix intérieure."
+      ]
+    }
+  ]
+}

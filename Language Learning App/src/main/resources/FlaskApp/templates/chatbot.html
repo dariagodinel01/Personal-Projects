@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title> Learn Laguages </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+        @import url("../fonts/octin_sports_rg.ttf");
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #0c0c0c;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .layout_padding {
+            padding: 90px 0;
+        }
+
+
+        .heading_container h2 {
+            position: relative;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        .header_section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            z-index: 999;
+        }
+        .header_section {
+            text-align: center;
+            background-color:#719699;
+        }
+
+        .header_section h1 {
+            display: inline-block;
+            color:white;
+        }
+
+        .main_section .detail-box {
+            text-align: center;
+        }
+
+        .main_section .detail-box h1 {
+            text-transform: uppercase;
+            color: #3b6064;
+        }
+
+        .main_section .detail-box .chat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main_section .detail-box {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .main_section .detail-box .input-field {
+            padding: 8px 12px;
+            margin-bottom: 10px;
+        }
+
+        .main_section .detail-box .send-button {
+            padding: 8px 16px;
+            background-color: #3b6064;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+
+        .main_section .detail-box .send-button:hover {
+            background-color: #FCBBB8;
+            color: #3b6064;
+        }
+        .input_container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #719699;
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .input_container input[type="text"] {
+            width: calc(100% - 100px);
+            padding: 10px;
+            margin-right:15px;
+        }
+
+        .input_container button {
+            width: 100px;
+            padding: 10px;
+            background-color: #3b6064;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .main_section .detail-box a{
+            text-transform: uppercase;
+            color: #0c0c0c;
+            font-size:30px ;
+        }
+        .main_section .detail-box a:hover{
+            color: #719699;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+<header class="header_section">
+    <div class="container-fluid">
+        <h1>Chatbot</h1>
+    </div>
+</header>
+
+<section class="main_section layout_padding">
+    <div class="container">
+        <div class="detail_container">
+            <div class="detail-box">
+
+                <div id="chatbox" class="chatbox"></div>
+                <div class="input_container">
+                    <input type="text" id="user_input" class="input-field" placeholder="Ask me anything...">
+                    <button onclick="sendMessage()" class="send-button">Send</button>
+
+
+                    <button onclick="startSpeechRecognition()" class="send-button">Speak</button>
+                </div>
+                <script>
+                    function appendMessage(sender, message) {
+                        $("#chatbox").append(`<p><strong>${sender}: </strong>${message}</p>`);
+                    }
+
+                    function sendMessage() {
+                        var userInput = $("#user_input").val();
+                        appendMessage("You", userInput);
+                        $("#user_input").val("");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/get_response",
+                            data: {
+                                user_message: userInput
+                            },
+                            success: function(response) {
+                                appendMessage("Chat", response.bot_response);
+                                $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
+                            }
+                        });
+                    }
+
+                      function startSpeechRecognition() {
+                        const recognition = new webkitSpeechRecognition();
+                        recognition.lang = 'fr-FR'; // Set language to French
+
+                        recognition.start();
+
+                        appendMessage("Chat", "Please speak and then wait while I'm analyzing...");
+
+                        recognition.onresult = function(event) {
+                            const transcript = event.results[0][0].transcript;
+                            console.log('Speech recognized:', transcript);
+
+                            // Send the recognized text to the server for processing
+                            fetch("/speech_to_text", {
+                                method: "POST",
+                                body: new URLSearchParams({
+                                    "user_message": transcript  // Pass the recognized text
+                                }),
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                var botResponse = data.bot_response;
+                                    console.log("Bot Response:", botResponse);
+                                    appendMessage("You", "This is how your pronunciation sounds like: " + transcript);
+
+
+                                    if (botResponse && botResponse !== "You used no logic connectors.") {
+                                        appendMessage("Chat", botResponse);
+                                    } else {
+                                        appendMessage("Chat", "You used no logic connectors. Please check the list on the website");
+                                    }
+
+
+                                $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
+                            })
+                            .catch(error => {
+                                console.error("Error:", error);
+                            });
+                        };
+
+                        recognition.onerror = function(event) {
+                            console.error('Speech recognition error:', event.error);
+                        };
+                    }
+
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
