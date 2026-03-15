@@ -9,7 +9,7 @@ Welcome to my central project repository. This collection tracks my journey from
 * **Spark Project** - Data processing and analysis using PySpark/Azure.
 * **Language Learning App** - A cross-platform AI-powered assistant that utilizes a Neural Network for real-time grammar analysis and the Web Speech API to provide instant pronunciation feedback for French learners.
 
-### Graphics & Game Engines (C++ / OpenGL)
+### Graphics & Game Engines 
 * **Computer Graphics** - Advanced 3D rendering projects including physics-based simulations and model loading.
 * **Interactive Story Game** - A web-based dynamic routing game focusing on narrative logic.
 
