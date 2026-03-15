@@ -1,4 +1,4 @@
-#Project Portfolio
+# Project Portfolio
 
 Welcome to my central project repository. This collection tracks my journey from my Computer Science Engineering degree in Bucharest to my current AI specialization in Grenoble.
 
